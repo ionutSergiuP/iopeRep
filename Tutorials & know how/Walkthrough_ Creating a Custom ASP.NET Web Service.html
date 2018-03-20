@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx -->
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="canonical" href="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Walkthrough_ Creating a Custom ASP.NET Web Service.html">
+        <title>Walkthrough: Creating a Custom ASP.NET Web Service</title>
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/office/ms464040(d=default,l=en-us,v=office.14).aspx">
+
+<meta name="NormalizedUrl" content="https://msdn.microsoft.com/en-us/library/office/ms464040(d=default,l=en-us,v=office.14).aspx">
+
+<meta name="ms.normalizedurl" content="https://msdn.microsoft.com/en-us/library/office/ms464040(d=default,l=en-us,v=office.14).aspx">
+
+<meta name="DCSext.Audience" content="Developer">
+
+<meta name="DCSext.ContentType" content="article (how-tos)">
+
+<meta name="DCSext.DeliveryChannel" content="MSDN Library">
+
+<meta name="DCSext.LifeCycle" content="develop">
+
+<meta name="DCSext.Product" content="SHAREPOINTFOUNDATION (WSS)">
+
+<meta name="DCSext.ProficiencyLevel" content="Skilled (300)">
+
+<meta name="DCSext.RelatedProducts" content="SharePoint Foundation 2010">
+
+<meta name="DCSext.Role" content="web developers">
+
+<meta name="DCSext.Subject" content="SharePoint">
+
+<meta name="DCSext.ProductFamily" content="MSDN_OFFICE">
+
+<meta name="ms.prodfamily" content="OFFICE">
+
+<meta name="ms.prod" content="SHAREPOINTFOUNDATION (WSS)">
+
+<meta name="VotingContextUrl" content="https://msdn.microsoft.com/en-us/library/office/ms464040(d=default,l=en-us,v=office.14).aspx">
+
+<meta name="MN" content="FB361397-5:52:48 AM">
+
+<meta name="Search.ShortId" content="ms464040">
+
+<meta name="ms.shortidmsdn" content="ms464040">
+
+<meta name="Ms.Locale" content="en-us">
+
+<meta name="ms.prodver" content="office.14">
+
+<meta name="ms.contentlang" content="EN">
+
+<meta name="ms.lang" content="EN">
+
+<meta name="ms.loc" content="US">
+
+<meta name="ms.sitever" content="2015.06.12.1">
+
+<meta name="ms.assetid" content="59009884-aafb-4bbe-b420-11f83ca97148">
+
+<meta name="ms.auth" content="0">
+
+
+
+
+
+
+
+
+        
+    <link rel="stylesheet" type="text/css" href="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Combined.css"><script type="text/javascript" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/ai.0.js" async=""></script><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i-msdn.sec.s-msft.com", 
+	"js": "https://i2-msdn.sec.s-msft.com", 
+	"css": "https://i-msdn.sec.s-msft.com", 
+	"xap": "https://msdn.microsoft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/jquery-1.8.2.min.js"></script><script class="mtps-injected">try {
+//
+  var literalNormalizedUrl = '/en-us/library/office/ms464040(l=en-us,v=office.14).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+
+
+
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+
+
+
+  var detectedLocale = 'en-us';
+  var wtsp = '_msdn_';
+  var gTrackEvents = '0';
+/**/
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected">try {
+/**/
+  var omni_guid = "25cab05b-09ab-4b6a-87c1-9b7b354db052";
+/**/
+} finally { MTPS._injectNextScript_3 && MTPS._injectNextScript_3(); }</script><script class="mtps-injected">try {
+//
+
+            window.appInsightsId = '60854590-027a-4ae4-98be-2741a40f355f';
+            //
+} finally { MTPS._injectNextScript_4 && MTPS._injectNextScript_4(); }</script><script class="mtps-injected" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Combined.js"></script><script class="mtps-injected" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/SearchBox.jss"></script><script class="mtps-injected" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/NavigationResize.js"></script><script class="mtps-injected">try {
+MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expand'; MTPS.LocalizedStrings.CollapseButtonTooltip = 'Collapse'; MTPS.LocalizedStrings.EnhancedExpandTooltip = 'Click to expand. Double-click to expand all.'; MTPS.LocalizedStrings.EnhancedCollapseTooltip = 'Click to collapse. Double-click to collapse all.'; MTPS.LocalizedStrings.ExpandAllButtonTooltip = 'Expand All'; MTPS.LocalizedStrings.CollapseAllButtonTooltip = 'Collapse All';
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><script class="mtps-injected" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Combined(1).js"></script><script src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/broker.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_10 && MTPS._injectNextScript_10(); }</script><link href="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/PrintView.css" rel="stylesheet" type="text/css" media="print"><script type="text/javascript" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/ms.js"></script></head>
+    <body class="library Chrome" data-pinterest-extension-installed="cr1.37">
+        <div id="page">
+            
+
+            
+            
+            
+    
+
+    <div id="ux-header" class="ltr">
+
+        <div class="upperBand">
+            <div data-fragmentname="SiteLogo" id="Fragment_SiteLogo" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://dev.office.com/" title="Office home page" id="SiteLogo_41252_1" xmlns="http://www.w3.org/1999/xhtml">Dev Center</a>
+</div>
+
+            <div class="upperRight">
+                <div id="signIn">
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=12&ct=1435063968&rver=6.0.5276.0&wp=MCMBI&wlcxt=MSDN%24MSDN%24MSDN&wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2foffice%2fms464040%2528v%3doffice.14%2529.aspx&lc=1033&id=254354&mkt=en-US" title="Sign in">Sign in</a></div>
+
+    
+
+                <div data-fragmentname="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://www.facebook.com/OfficeDev" title="Facebook" id="SocialLinks_834_4" class="facebookLogo" xmlns="http://www.w3.org/1999/xhtml">https://www.facebook.com/OfficeDev</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/OfficeDev" title="Twitter" id="SocialLinks_834_5" class="twitterLogo" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/OfficeDev</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </div>
+        <div class="lowerBand">            
+                    <nav>
+            <ul>
+                        <li class="inactive">
+                            <a href="http://dev.office.com/opportunity" title="Opportunity">Opportunity</a>
+                        </li>
+                        <li class="inactive">
+                            <a href="http://dev.office.com/getting-started" title="Getting Started">Getting Started</a>
+                        </li>
+                        <li class="inactive">
+                            <a href="http://dev.office.com/transform" title="Transform">Transform</a>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Resources">Resources</a>
+                            <div class="subNav">
+                                <ul>
+                                            <li><a href="http://dev.office.com/code-samples" title="Code Samples">Code Samples</a></li>
+                                            <li><a href="http://dev.office.com/events" title="Events">Events</a></li>
+                                            <li><a href="http://dev.office.com/patterns-and-practices" title="Patterns and Practices">Patterns and Practices</a></li>
+                                            <li><a href="http://dev.office.com/podcasts" title="Podcasts">Podcasts</a></li>
+                                            <li><a href="http://dev.office.com/training" title="Training">Training</a></li>
+                                            <li><a href="http://dev.office.com/videos" title="Videos">Videos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="inactive">
+                            <a href="http://dev.office.com/showcase" title="Showcase">Showcase</a>
+                        </li>
+                        <li class="inactive current toggle">
+                            <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                            <div class="subNav">
+                                <ul>
+                                            <li><a href="https://msdn.microsoft.com/en-us/office/office365/howto/platform-development-overview" title="O365 REST APIs">O365 REST APIs</a></li>
+                                            <li><a href="https://msdn.microsoft.com/en-us/office/office365/api/api-catalog" title="O365 REST APIs reference">O365 REST APIs reference</a></li>
+                                            <li><a href="http://dev.office.com/ios" title="O365 for iOS">O365 for iOS</a></li>
+                                            <li><a href="http://dev.office.com/android" title="O365 for Android">O365 for Android</a></li>
+                                            <li><a href="https://msdn.microsoft.com/en-us/library/office/jj220060.aspx" title="Office Add-ins">Office Add-ins</a></li>
+                                            <li><a href="https://msdn.microsoft.com/en-us/library/office/fp179930.aspx" title="SharePoint Add-ins">SharePoint Add-ins</a></li>
+                                            <li><a href="https://msdn.microsoft.com/office" title="Previous versions">Previous versions</a></li>
+                                </ul>
+                            </div>
+                        </li>
+            </ul>
+        </nav>
+        
+
+            <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" onsubmit="return Epx.Controls.SearchBox.searchBoxOnSubmit(this);">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" autocomplete="off">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" title="Search here"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(255, 255, 255); font-family: &#39;Segoe UI&#39;, &#39;Lucida Grande&#39;, Verdana, Arial, Helvetica, sans-seri; font-size: 14px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    
+    
+  </div>
+</div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+  <div class="breadCrumb">
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/dn467914.aspx" title="Office development">Office development</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/dn833469.aspx" title="SharePoint">SharePoint</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/dd776256(v=office.12).aspx" title="SharePoint 2010">SharePoint 2010</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/ee557253(v=office.14).aspx" title="SDK Documentation">SDK Documentation</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/ee539432(v=office.14).aspx" title="SharePoint Foundation 2010 General Reference">SharePoint Foundation 2010 General Reference</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/ee539092(v=office.14).aspx" title="Development in Depth">Development in Depth</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/ee537564(v=office.14).aspx" title="Using the SharePoint Foundation Client APIs">Using the SharePoint Foundation Client APIs</a></span>
+        <span><a href="https://msdn.microsoft.com/en-us/library/office/aa979690(v=office.14).aspx" title="ASP.NET Web Services">ASP.NET Web Services</a></span>
+
+    <span><a href="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Walkthrough_ Creating a Custom ASP.NET Web Service.html" title="Walkthrough: Creating a Custom ASP.NET Web Service">Walkthrough: Creating a Custom ASP.NET Web Service</a></span>
+  </div>
+
+
+            <div id="body">
+                
+
+
+
+
+
+
+    <div id="leftNav" style="width: 280px; max-width: 480px; min-height: 6456px; height: 483px;">
+
+
+
+
+<div id="tocnav" class="hide-archive" style="width: 280px; position: fixed; top: 60px;">
+
+
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/dn467914.aspx" id="dn468026_office.15_en-us" mtpsaliasid="" mtpsassetid="e2bea160-2979-4b76-8f45-8a1461ea8be1_office.15_en-us" mtpsshortid="dn467914_Office.15_en-us" title="Office development">Office development</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/dn833469.aspx" id="dn621206_office.15_en-us" mtpsaliasid="" mtpsassetid="8ad67492-0032-4913-a86f-3163cd970e2f_office.15_en-us" mtpsshortid="dn833469_MSDN.10_en-us" title="SharePoint">SharePoint</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/dd776256(v=office.12).aspx" id="ff420337_office.14_en-us" mtpsaliasid="" mtpsassetid="63428418-7a72-4ecf-bfc1-d40920907a8c_office.14_en-us" mtpsshortid="dd776256_office.12_en-us" title="SharePoint 2010">SharePoint 2010</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/ee557253(v=office.14).aspx" id="ff420338_office.14_en-us" mtpsaliasid="" mtpsassetid="5d91bc3a-9246-4fea-a48f-107598d7046e_office.14_en-us" mtpsshortid="ee557253_office.14_en-us" title="SDK Documentation">SDK Documentation</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/ee539432(v=office.14).aspx" id="ff847377_office.14_en-us" mtpsaliasid="" mtpsassetid="e4ffaa18-e64b-4849-9362-4091685ad955_office.14_en-us" mtpsshortid="ee539432_office.14_en-us" title="SharePoint Foundation 2010 General Reference">SharePoint Foundation 2010 General Reference</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/ee539092(v=office.14).aspx" id="ee595729_office.14_en-us" mtpsaliasid="" mtpsassetid="d9afaa96-f69f-4432-929c-cf520b4e8f8f_office.14_en-us" mtpsshortid="ee539092_office.14_en-us" title="Development in Depth">Development in Depth</a>            </div>
+            <div class="toclevel0 " data-toclevel="0" style="padding-left: 0px;">
+<a class="toc_collapsed" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/ee537564(v=office.14).aspx" id="ee595748_office.14_en-us" mtpsaliasid="" mtpsassetid="9e5d10f3-c59f-4448-91bb-9d1c71ec5dba_office.14_en-us" mtpsshortid="ee537564_office.14_en-us" title="Using the SharePoint Foundation Client APIs">Using the SharePoint Foundation Client APIs</a>            </div>
+            <div class="toclevel1 " data-toclevel="1" data-childrenloaded="true" style="padding-left: 17px;">
+<a class="toc_expanded" href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#"></a><a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/office/aa979690(v=office.14).aspx" id="ee735684_office.14_en-us" mtpsaliasid="" mtpsassetid="ca248502-679a-4a77-b185-b693d294b2ce_office.14_en-us" mtpsshortid="aa979690_office.14_en-us" title="ASP.NET Web Services">ASP.NET Web Services</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms458094(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Web Service Guidelines">Web Service Guidelines</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms412944(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Add Users to a Group">How to: Add Users to a Group</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms450301(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Return Lists">How to: Return Lists</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms429658(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Return List Items">How to: Return List Items</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms440289(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Update List Items">How to: Update List Items</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms477384(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Customize Meeting Workspaces Using the Meetings Web Service">How to: Customize Meeting Workspaces Using the Meetings Web Service</a>            </div>
+            <div class="toclevel2 " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="https://msdn.microsoft.com/en-us/library/office/ms465611(v=office.14).aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="How to: Remove a Meeting from a Meeting Workspace">How to: Remove a Meeting from a Meeting Workspace</a>            </div>
+            <div class="toclevel2 current " data-toclevel="2" style="padding-left: 34px;">
+<span class="toc_empty"></span><a href="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/Walkthrough_ Creating a Custom ASP.NET Web Service.html" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Walkthrough: Creating a Custom ASP.NET Web Service">Walkthrough: Creating a Custom ASP.NET Web Service</a>            </div>
+</div>
+        
+
+        
+
+        
+        
+        <div id="toc-resizable-ew" class="toc-resizable-ew"></div>
+        
+
+<a id="NavigationResize" href="javascript:void(0)" style="left: 280px; display: inline-block;">
+    <img class="cl_nav_resize_open" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/ImageSprite.png" title="Expand" alt="Expand">
+    <img class="cl_nav_resize_close" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/ImageSprite.png" title="Minimize" alt="Minimize" style="display: none;">
+</a>
+
+
+
+    </div>
+<div id="content" class="content" style="margin-left: 280px; width: auto;">
+
+
+
+
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+    <h1 class="title">Walkthrough: Creating a Custom ASP.NET Web Service</h1>
+    
+    <div class="lw_vs">
+      <div id="curversion">
+        <strong>
+            SharePoint 2010
+        </strong>
+      </div>
+      <div id="versionclick">
+        <div id="vsseperator" class="cl_lw_vs_seperator"></div>
+        <div>
+          <div>
+            <a id="vsLink" href="javascript:;">
+                        Other Versions
+                    </a>
+          </div>
+          <div class="cl_vs_arrow clip10x10">
+            <img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/ImageSprite.png">
+          </div>
+        </div>
+        <ul id="vsPanel" style="display: none;">
+          <li>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.12).aspx">Windows SharePoint Services 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+    
+    <div id="mainSection">
+      <div id="mainBody">
+        <div class="introduction">
+          <p>
+            <strong>Last modified:  </strong>July 07, 2010</p>
+          <p>
+            <em>
+              <strong>Applies to:  </strong>SharePoint Foundation 2010</em>
+          </p>
+          <p>
+            <strong>In this article</strong>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection0">Basic Steps for Creating an ASP.NET Web Service</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection1">Creating an ASP.NET Web Service in Visual Studio</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection2">Generating and Modifying Static Discovery and WSDL Files</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection3">Deploying the Web Service Files to the _vti_bin Directory</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection4">Listing the New Web Service in spdisco.aspx</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection5">Creating a Windows Application to Consume the Web Service</a>
+            <br>
+            <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#sectionSection6">Implementing the SharePoint Foundation Object Model</a>
+            <br>
+          </p>
+          <p>This programming task provides an overview of how to create a custom Web service that operates within the context of Microsoft SharePoint Foundation. It steps through the process of creating a simple "Hello World" Web service in Microsoft Visual Studio 2010, and then shows how to modify the service so that it implements the SharePoint Foundation server-side object model to return site and list data.</p>
+          <div class="alert">
+            <table>
+              <tbody><tr>
+                <th align="left">
+                  <img id="alert_caution" alt="Important note" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/IC589957.gif" title="Important note" xmlns="">
+                  <strong>Important</strong>
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <p>Custom ASP.NET Web services will function in SharePoint Foundation 2010, but it’s recommended that you instead create custom WCF services. For more information about WCF services, see <span><a href="https://msdn.microsoft.com/en-us/library/office/ff521586(v=office.14).aspx">WCF Services in SharePoint Foundation 2010</a></span>. For a walkthrough that shows how to create a custom WCF service, see <span><a href="https://msdn.microsoft.com/en-us/library/office/ff521584(v=office.14).aspx">Walkthrough: Creating and Implementing a Custom WCF Service in SharePoint Foundation</a></span>.</p>
+                </td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+        <a id="sectionSection0">
+          
+        </a>
+        <div>
+          
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Basic Steps for Creating an ASP.NET Web Service</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle0">
+              
+            </a>
+            <ul>
+              <li>
+                <p>Create a Microsoft ASP.NET Web service in Microsoft Visual Studio.</p>
+              </li>
+              <li>
+                <p>Generate and edit a static discovery file and a Web Services Description Language (WSDL) file. </p>
+              </li>
+              <li>
+                <p>Deploy the Web service files to the _vti_bin directory. </p>
+              </li>
+              <li>
+                <p>Make your Web Service discoverable by listing it in Spdisco.aspx</p>
+              </li>
+              <li>
+                <p>Create a client application to consume the Web service.</p>
+              </li>
+              <li>
+                <p>Create a class library within the Web service that defines the programming logic for the Web service.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a id="sectionSection1">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Creating an ASP.NET Web Service in Visual Studio</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle1">
+              
+            </a>
+            <p>The first step is to create a Microsoft ASP.NET Web service Web site in Visual Studio. </p>
+            <h3 class="procedureSubHeading">To create an ASP.NET Web service</h3>
+            <div class="subSection">
+              <ol>
+                <li>
+                  <p>In Visual Studio, click <span class="label">File</span>, point to <span class="label">New</span>, and then select <span class="label">Web Site</span>.</p>
+                </li>
+                <li>
+                  <p>In the <span class="label">New Web Site</span> dialog box, select <span class="label">.NET Framework 3.5</span> as the target framework, select <span class="label">Visual Basic</span> or <span class="label">Visual C#</span> as the programming language under <span class="label">Installed Templates</span>, select the <span class="label">ASP.NET Web Service</span> template, select <span class="label">File System</span> in the <span class="label">Web location</span> box, specify a location for the project, and then click <span class="label">OK</span>.</p>
+                </li>
+                <li>
+                  <p>Within the new Web service solution, create a separate class library project to contain the Web service logic. To create the project, click <span class="label">File</span>, point to <span class="label">New</span>, and then select <span class="label">Project</span>.</p>
+                </li>
+                <li>
+                  <p>In the <span class="label">New Project</span> dialog box, expand either <span class="label">Visual Basic</span> or <span class="label">Visual C#</span> under <span class="label">Installed Templates</span>, select <span class="label">Class Library</span> as the template, provide a name and location for the project, select <span class="label">Add to Solution</span> in the <span class="label">Solution</span> box, and then click <span class="label">OK</span>.</p>
+                </li>
+                <li>
+                  <p>Add a reference to the <span><a href="http://msdn2.microsoft.com/EN-US/library/9xe4bs0s" target="_blank">System.Web.Services</a></span> namespace in the class library project. Right-click the project in <span class="label">Solution Explorer</span>, click <span class="label">Add Reference</span>, select <span class="label">System.Web.Services</span> on the <span class="label">.NET</span> tab of the <span class="label">Add Reference</span> dialog box, and then click <span class="label">OK</span>.</p>
+                </li>
+                <li>
+                  <p>Replace the default class file in the class library project with the default service class file that Visual Studio provides in the <span class="label">App_Code</span> folder of the Web service. </p>
+                  <p>
+                    <strong>To replace the class file with the service class file</strong>
+                  </p>
+                  <ol>
+                    <li>
+                      <p>In <span class="label">Solution Explorer</span>, drag the Service.cs or Service.vb file to the top node in the class library project.</p>
+                    </li>
+                    <li>
+                      <p>Delete the Class1.cs or Class1.vb file, and also delete the Service.cs or Service.vb file that remains in the <span class="label">App_Code</span> folder.</p>
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <p>Create a strong name for the class library:</p>
+                  <ol>
+                    <li>
+                      <p>In <span class="label">Solution Explorer</span>, right-click the class library project, and then click <span class="label">Properties</span>.</p>
+                    </li>
+                    <li>
+                      <p> In the <span class="label">Properties</span> dialog box, click <span class="label">Signing</span>, select <span class="label">Sign the assembly</span>, and then select <span class="label">&lt;New&gt;</span> in the <span class="label">Choose a strong name key file</span> list.</p>
+                    </li>
+                    <li>
+                      <p>In the <span class="label">Create Strong Name Key</span> dialog box, provide a file name for the key, clear the <span class="label">Protect my key file with a password</span> check box, and then click <span class="label">OK</span>.</p>
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <p>To build only the class library project, right-click the project in <span class="label">Solution Explorer</span>, and then click <span class="label">Build</span>.</p>
+                </li>
+                <li>
+                  <p>To add your assembly to the global assembly cache (GAC), you can either drag the assembly into the <span class="code">%windows%\assembly</span> directory using two instances of Windows Explorer, or use <em>gacutil.exe</em>, the command-line utility that is installed with theMicrosoft .NET Framework 2.0 Software Development Kit.</p>
+                  <p>
+                    <strong>To use gacutil.exe to copy the class library DLL into the GAC</strong>
+                  </p>
+                  <ol>
+                    <li>
+                      <p>To open the Visual Studio command prompt, click <span class="label">Start</span>, click <span class="label">All Programs</span>, click <span class="label">Microsoft Visual Studio 2010</span>, click <span class="label">Visual Studio Tools</span>, right-click <span class="label">Visual Studio Command Prompt (2010)</span>, and click <span class="label">Run as administrator</span>.</p>
+                    </li>
+                    <li>
+                      <p>At the command prompt, type a command in the following form, and press <span class="label">ENTER</span>.</p>
+                      <p>
+                        <span class="code">gacutil.exe -if "&lt;Full file system path to DLL&gt;"</span>.</p>
+                    </li>
+                  </ol>
+                </li>
+                <li>
+                  <p>Now you are ready to modify the assembly information in the default Service.asmx file of the Web service by using information about the DLL that can be found in the GAC. To get information from the GAC, open the <span class="code">%windows%\assembly</span> directory in Windows Explorer, right-click your assembly, and click <span class="label">Properties</span>.</p>
+                </li>
+                <li>
+                  <p>To open Service.asmx in <span class="label">Solution Explorer</span>, right-click the file and click <span class="label">Open</span>.</p>
+                </li>
+                <li>
+                  <p>Remove the <span class="input">CodeBehind</span> attribute from the page directive in Service.asmx, and modify the contents of the <span class="input">Class</span> attribute so that the directive matches the following format, where the assembly name "MyServiceAssembly" and the public key token are values specified in the <span class="label">Properties</span> dialog box that you opened in step 10.</p>
+<div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_460f8d68-5997-4852-b619-42dfce10217a');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_460f8d68-5997-4852-b619-42dfce10217a" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>&lt;%@ WebService Language="C#" Class="Service, MyServiceAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f2dca3c0f2d0131" %&gt;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p>In Visual Basic, include the namespace to identify the class, for example, <span class="code">Class="MyServiceNamespace.Service, MyServiceAssembly,</span> Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f2dca3c0f2d0131".</p></li>
+                <li>
+                  <p>Rename your .asmx file appropriately, and then save your changes.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <a id="sectionSection2">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Generating and Modifying Static Discovery and WSDL Files</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle2">
+              
+            </a>
+            <p>To provide discovery and description for your custom Web service, you must create a .disco file and a .wsdl file. Because SharePoint Foundation virtualizes its URLs (for example, <span class="code">http://MyServer/MySite/MySubsite</span> becomes <span class="code">http://MyServer</span>), you cannot use the .disco and .wsdl files that are autogenerated by ASP.NET. Instead, you must create a .disco page and a .wsdl ASPX page that provide the necessary redirection and maintain virtualization.</p>
+            <p>You can use ASP.NET to generate the .disco and .wsdl files by temporarily hosting your Web service in a virtual directory, such as <span class="code">/_layouts</span>, and then by using the Microsoft .NET Framework Web Service Discovery tool (Disco.exe) to obtain the generated files.</p>
+            <h3 class="procedureSubHeading">To generate and edit the static discovery and WSDL files</h3>
+            <div class="subSection">
+              <ol>
+                <li>
+                  <p>In Windows Explorer, copy the .asmx file of your Web service to %ProgramFiles%\Common Files\Microsoft Shared\web server extensions\14\TEMPLATE\LAYOUTS.</p>
+                </li>
+                <li>
+                  <p>Run Disco.exe at the command prompt from the LAYOUTS directory to generate .disco and .wsdl files. Run a command in the following format to generate the files in \LAYOUTS:</p>
+                  <p>
+                    <span class="code">disco http://MyServer/_layouts/MyCustomWebService.asmx</span>
+                  </p>
+                </li>
+                <li>
+                  <p>To register namespaces of the SharePoint Foundation object model, open both the .disco and .wsdl files and replace the opening XML processing instruction -- <span class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span> -- with instructions such as the following.</p>
+<div id="code-snippet-2" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>XML</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_91371c17-4225-4771-acf7-e39e37cbf530');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_91371c17-4225-4771-acf7-e39e37cbf530" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>&lt;%@ Page Language="C#" Inherits="System.Web.UI.Page" %&gt; 
+&lt;%@ Assembly Name="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %&gt; 
+&lt;%@ Import Namespace="Microsoft.SharePoint.Utilities" %&gt; 
+&lt;%@ Import Namespace="Microsoft.SharePoint" %&gt;
+&lt;% Response.ContentType = "text/xml"; %&gt;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li>
+                <li>
+                  <p>In the .disco file, modify the contract reference and SOAP address tags to be like the following example, which replaces literal paths with code generated paths through use of the <span><a href="https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.utilities.sphttputility(v=office.14).aspx">Microsoft.SharePoint.Utilities.SPHttpUtility</a></span> class, and which replaces the method name that is specified in the <span class="input">binding</span> attribute.</p>
+<div id="code-snippet-3" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>XML</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_9f023741-bb9c-408e-8637-733001571070');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_9f023741-bb9c-408e-8637-733001571070" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>&lt;contractRef ref=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request) + "?wsdl"),Response.Output); %&gt; 
+docRef=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %&gt; 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" /&gt;
+&lt;soap address=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %&gt; 
+xmlns:q1="http://tempuri.org/" binding="q1:HelloWorld" xmlns="http://schemas.xmlsoap.org/disco/soap/" /&gt;
+&lt;soap address=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %&gt; 
+xmlns:q2="http://tempuri.org/" binding="q2:ServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" /&gt;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li>
+                <li>
+                  <p>In the .wsdl file, make the following similar substitution for the SOAP address that is specified.</p>
+<div id="code-snippet-4" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>XML</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1d5ae247-acb6-4fd7-810d-8564d4aa9464');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_1d5ae247-acb6-4fd7-810d-8564d4aa9464" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>&lt;soap:address location=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %&gt; /&gt;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li>
+                <li>
+                  <p>Rename both files in the respective formats MyCustomWebServicedisco.aspx and MyCustomWebServicewsdl.aspx so that your service is discoverable through SharePoint Foundation.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <a id="sectionSection3">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Deploying the Web Service Files to the _vti_bin Directory</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle3">
+              
+            </a>
+            <p>The _vti_bin virtual directory maps physically to the %ProgramFiles%\Common Files\Microsoft Shared\web server extensions\14\ISAPI directory, which contains the default Web service files that are used in SharePoint Foundation. Copy the new MyCustomWebServicewsdl.aspx and MyCustomWebServicedisco.aspx files, and also the MyCustomWebService.asmx file, to the ISAPI folder.</p>
+            <p>From the _vti_bin directory, a Web service offers its functionality to the site that is specified when adding a Web reference for the service.</p>
+            <p>To verify that your custom Web service is discoverable, navigate to <span class="code">http://MyServer/_vti_bin/MyCustomWebService.asmx</span>.</p>
+          </div>
+        </div>
+        <a id="sectionSection4">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Listing the New Web Service in spdisco.aspx</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle4">
+              
+            </a>
+            <p>To make your Web service discoverable in Visual Studio as a Web service along with the default SharePoint Foundation Web services, open the spdisco.aspx file that is located in  %ProgramFiles%\Common Files\Microsoft Shared\web server extensions\14\ISAPI and add the following code, specifying the .asmx file for your Web service. </p>
+<div id="code-snippet-5" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_959d52b4-e5da-4b9f-ab6c-ede575734527');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_959d52b4-e5da-4b9f-ab6c-ede575734527" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>&lt;contractRef ref=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(spWeb.Url + "/_vti_bin/MyCustomWebService.asmx?wsdl"), Response.Output); %&gt; 
+docRef=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(spWeb.Url + "/_vti_bin/MyCustomWebService.asmx"), Response.Output); %&gt; 
+xmlns=" http://schemas.xmlsoap.org/disco/scl/ " /&gt;
+&lt;discoveryRef ref=&lt;% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(spWeb.Url + "/_vti_bin/MyCustomWebService.asmx?disco"),Response.Output); %&gt; 
+xmlns="http://schemas.xmlsoap.org/disco/" /&gt;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+        <a id="sectionSection5">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Creating a Windows Application to Consume the Web Service</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle5">
+              
+            </a>
+            <p>After you copy the Web services files to the _vti_bin directory, the next step is to create a Windows Application to consume the Web service.</p>
+            <h3 class="procedureSubHeading">To create a Windows Application that consumes the Web service</h3>
+            <div class="subSection">
+              <ol>
+                <li>
+                  <p>Open Visual Studio, and on the <span class="label">File</span> menu, point to <span class="label">New</span>, and then click <span class="label">Project</span>. </p>
+                </li>
+                <li>
+                  <p>In the <span class="label">New Project</span> dialog box, select <span class="label">Visual C#</span> or <span class="label">Visual Basic</span>, and then select the <span class="label">Windows Forms Application</span> template. </p>
+                </li>
+                <li>
+                  <p>Type a name for the application in the <span class="label">Name</span> box, specify a location for the project files in the <span class="label">Location</span> box, and then click <span class="label">OK</span>. </p>
+                </li>
+                <li>
+                  <p>In <span class="label">Solution Explorer</span>, right-click the project, and then click <span class="label">Add Service Reference</span>. </p>
+                </li>
+                <li>
+                  <p>In the <span class="label">Add Service Reference</span> dialog box, click <span class="label">Advanced</span>, and in the <span class="label">Service Reference Settings</span> box, click <span class="label">Add Web Reference</span>.</p>
+                </li>
+                <li>
+                  <p>In the address bar of the <span class="label">Add Web Reference</span> browser, type the URL for the site to apply the service to, as follows, </p>
+                  <p>
+                    <span class="input">http://Server_Name/[sites/][Site_Name/]_vti_bin/MyCustomWebService.asmx</span>
+                  </p>
+                  <p>and then press <span class="label">ENTER</span>.</p>
+                  <p>
+                    
+                  </p>
+                </li>
+                <li>
+                  <p>Click <span class="label">Add Reference</span> to download the service contract for the Web service.</p>
+                </li>
+                <li>
+                  <p>Open <span class="label">Form1</span> in Design view, display the <span class="label">Toolbox</span>, and then drag a button onto the form.</p>
+                </li>
+                <li>
+                  <p>Double-click the <span class="label">Button1</span> control on <span class="label">Form1</span> to display the code-behind file in the code editor, and add the following code that calls your custom method.</p>
+<div id="code-snippet-6" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_dbc0072a-bfc9-4dda-961e-15cc097542f9');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_dbc0072a-bfc9-4dda-961e-15cc097542f9" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">Dim</span> MyCustomService <span style="color:Blue;">As</span> <span style="color:Blue;">New</span> Web_Reference_Folder.MyServiceClass()
+MyCustomService.UseDefaultCredentials = <span style="color:Blue;">True</span>
+MessageBox.Show(MyCustomService.HelloWorld())
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p></p>
+<div id="code-snippet-7" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4c058060-6d3a-420f-984d-7b794b16dc92');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_4c058060-6d3a-420f-984d-7b794b16dc92" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>Web_Reference_Folder.MyServiceClass MyCustomService = <span style="color:Blue;">new</span> Web_Reference_Folder.MyServiceClass();
+MyCustomService.UseDefaultCredentials = <span style="color:Blue;">true</span>;
+MessageBox.Show(MyCustomService.HelloWorld());
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li>
+                <li>
+                  <p>Press F5 to compile and run the project and see a message box that displays "Hello World".</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <a id="sectionSection6">
+          
+        </a>
+        <div>
+          <h2 class="LW_CollapsibleArea_TitleDiv">
+            <div>
+              <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse" role="button">
+                <span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span>
+                <span class="LW_CollapsibleArea_Title">Implementing the SharePoint Foundation Object Model</span>
+              </a>
+              <div class="LW_CollapsibleArea_HrDiv">
+                <hr class="LW_CollapsibleArea_Hr">
+              </div>
+            </div>
+          </h2>
+          <div class="sectionblock">
+            <a id="sectionToggle6">
+              
+            </a>
+            <p>Now you are ready to try out types and members of the SharePoint Foundation object model in the class library of your Web service.</p>
+            <h3 class="procedureSubHeading">To implement the SharePoint Foundation object model</h3>
+            <div class="subSection">
+              <ol>
+                <li>
+                  <p>Add a reference to the <span class="input">Microsoft.SharePoint</span> assembly. Right-click the class library project in <span class="label">Solution Explorer</span>, click <span class="label">Add Reference</span>, select <span class="label"> SharePoint Foundation</span>, and then click <span class="label">OK</span>.</p>
+                </li>
+                <li>
+                  <p>In your project Service.cs or Service.vb file, you must import the appropriate namespaces in the object model. For example, to use types and members of the <span><a href="https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint(v=office.14).aspx">Microsoft.SharePoint</a></span> and <span><a href="https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.utilities(v=office.14).aspx">Microsoft.SharePoint.Utilities</a></span> namespaces, add the following directives.</p>
+<div id="code-snippet-8" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_307f4fa5-82f6-4d32-be45-c4b84683454d');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_307f4fa5-82f6-4d32-be45-c4b84683454d" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">Imports</span> Microsoft.SharePoint
+<span style="color:Blue;">Imports</span> Microsoft.SharePoint.Utilities
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p></p>
+<div id="code-snippet-9" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1740be24-4660-4bd3-b4df-e9f6b80ce42a');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_1740be24-4660-4bd3-b4df-e9f6b80ce42a" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">using</span> Microsoft.SharePoint;
+<span style="color:Blue;">using</span> Microsoft.SharePoint.Utilities;
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+</li>
+                <li>
+                  <p>Rename the method in Service.cs or Service.vb. For example, change the name from HelloWorld to GetSiteListCount.</p>
+                </li>
+                <li>
+                  <p>Add the following code to display the name of the Web site and the number of lists that it contains.</p>
+<div id="code-snippet-10" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>VB</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_3a3b4362-afdd-4586-9a97-3384290c7381');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_3a3b4362-afdd-4586-9a97-3384290c7381" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">Dim</span> myWebSite <span style="color:Blue;">As</span> SPWeb = SPContext.Current.Web
+<span style="color:Blue;">Dim</span> lists <span style="color:Blue;">As</span> SPListCollection = myWebSite.Lists
+
+<span style="color:Blue;">Return</span> myWebSite.Title + <span style="color:#A31515;">" contains "</span> + lists.<span style="color:Blue;">Count</span>.ToString() + 
+<span style="color:#A31515;">" lists."</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p></p>
+<div id="code-snippet-11" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>C#</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if (window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_94c41274-17de-407c-b89a-8355057ff855');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_94c41274-17de-407c-b89a-8355057ff855" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre>SPWeb myWebSite = SPContext.Current.Web;
+SPListCollection lists = myWebSite.Lists;
+
+<span style="color:Blue;">return</span> (myWebSite.Title + <span style="color:#A31515;">" contains "</span> + lists.Count.ToString() + 
+<span style="color:#A31515;">" lists."</span>);
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<div class="alert"><table><tbody><tr><th align="left"><img id="alert_note" alt="Note" src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/IC589958.gif" title="Note" xmlns=""><strong>Note</strong></th></tr><tr><td><p>If your code modifies SharePoint Foundation data in some way during an HttpGet request, you may need to allow unsafe updates on the Web site, which you can do by setting the <span><a href="https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spweb.allowunsafeupdates(v=office.14).aspx">AllowUnsafeUpdates</a></span> property.</p></td></tr></tbody></table></div></li>
+                <li>
+                  <p>To rebuild the class library DLL and copy it to the GAC, repeat steps 8 and 9 in "To create an ASP.NET Web service."</p>
+                </li>
+                <li>
+                  <p>Reset Internet Information Services (IIS) for changes in the DLL to take effect.</p>
+                </li>
+                <li>
+                  <p>To generate new versions of the .disco and .wsdl files, repeat the steps in "To generate the static discovery and WSDL files," but change the method binding name in the .disco file as appropriate, for example, to GetSiteListCount.</p>
+                </li>
+                <li>
+                  <p>Copy the new versions of the MyCustomWebServicedisco.aspx and MyCustomWebServicewsdl.aspx files to the ISAPI folder.</p>
+                </li>
+                <li>
+                  <p>Open the Windows application that you created previously, delete the previous Web service reference for the Hello World example, change the method name as appropriate, and add a new Web reference to the revised Web service.</p>
+                </li>
+                <li>
+                  <p>Press F5 to compile and run the project and see a message box that displays the Web site name and the number of lists that it contains.</p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input type="checkbox" class="libraryFilterInherited" checked="checked" value="Inherit">Inherited
+        </label>
+        <label>
+            <input type="checkbox" class="libraryFilterProtected" checked="checked" value="Protected">Protected
+        </label>
+    </div>
+</div>
+    
+<input type="hidden" id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings.">
+
+
+ 
+</div>
+
+
+<input id="tocPaddingPerLevel" type="hidden" value="17">
+
+
+            </div>
+            <div class="clear"></div>
+
+            
+    
+<input name="__RequestVerificationToken" type="hidden" value="FIYbCjBC8Ax4nariDz9hxd3LhvDkW8oyEbJuZ9pCKek9UPPC3uZzVQgeGXoBvoMzjv57Ady3rx-fZxQODUM6J4shBkw1">
+<input id="ratingSubmitUrl" type="hidden" value="https://msdn.microsoft.com/en-us/library/feedback/add/ms464040(v=office.14).aspx">
+<input id="isTopicRated" type="hidden" value="false">
+
+
+    
+
+
+    <div id="ux-footer" class="ltr">
+        
+            <div id="footerSock">
+                <div id="footerSockInner">
+                    <a name="feedback"></a>
+                    <div data-fragmentname="Survey" id="Fragment_Survey" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="DetailedLink">
+    
+    <div class="Content">
+      <div class="title"></div>
+    </div>
+  </div>
+</div>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Was this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br>Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes">Yes</button>
+            <button class="button" id="ratingNo">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="">
+    </div>
+    <div id="ratingSection2">
+        <div class="title">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="counter right">
+            <span id="feedbackTextCounter">1500</span> characters remaining
+        </div>
+        <div class="buttons left">
+            <button class="button" id="ratingSubmit">Submit</button>
+            <button class="button" id="ratingSkipThis">Skip this</button>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+
+                    <div data-fragmentname="SockLinks" id="Fragment_SockLinks" xmlns="http://www.w3.org/1999/xhtml"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        <div id="footerContainer">
+            <div id="fourColumnFooter">
+                <div data-fragmentname="Column1" id="Fragment_Column1" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Community Resources</div>
+        <ul class="links">
+          <li>
+            <a href="http://www.yammer.com/itpronetwork" title="O365 Technical Network" id="Column1_41253_6" xmlns="http://www.w3.org/1999/xhtml">O365 Technical Network</a>
+          </li>
+          <li>
+            <a href="http://social.msdn.microsoft.com/Forums/office/en-US/home?category=apps,officedev,sharepoint,exchangeserver,lync,msproject" title="Office developer forums" id="Column1_41253_8" xmlns="http://www.w3.org/1999/xhtml">MSDN Forums</a>
+          </li>
+          <li>
+            <a href="http://officespdev.uservoice.com/" title="Customer feedback for the Office developer platform" id="Column1_41253_9" xmlns="http://www.w3.org/1999/xhtml">UserVoice</a>
+          </li>
+          <li>
+            <a href="http://stackoverflow.com/questions/tagged/ms-office" title="Stack Overflow" id="Column1_41253_10" xmlns="http://www.w3.org/1999/xhtml">Stack Overflow</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>              
+                <div data-fragmentname="Column2" id="Fragment_Column2" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listItems">
+      
+      <div class="linkList" xmlns="http://www.w3.org/1999/xhtml">
+        <div class="linkListTitle">Follow Us</div>
+        <ul class="links">
+          <li>
+            <a href="https://twitter.com/OfficeDev" title="Twitter" id="Column2_41253_12" xmlns="http://www.w3.org/1999/xhtml">Twitter</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/OfficeDev" title="Facebook" id="Column2_41253_14" xmlns="http://www.w3.org/1999/xhtml">Facebook</a>
+          </li>
+          <li>
+            <a href="http://blogs.office.com/dev" title="Office Dev Blog" id="Column2_41253_13" xmlns="http://www.w3.org/1999/xhtml">Office Dev Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>                                       
+            </div>
+            
+            <span class="microsoftLogo" title="Microsoft"></span>
+            <div id="baseFooter">                
+                <div id="FooterCopyright">© 2015 Microsoft</div>                
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/en-us/office/SelectLocale">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2foffice%2fms464040(v%3doffice.14).aspx">
+        <a href="https://msdn.microsoft.com/en-us/library/office/ms464040(v=office.14).aspx#" onclick="$(&#39;#selectLocaleForm&#39;).submit();return false;" title="Change your language">United States - English</a>
+    </form>
+
+
+                <div data-fragmentname="BaseFooterLinks" id="Fragment_BaseFooterLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/en-US/cc300389" id="BaseFooterLinks_41253_29" xmlns="http://www.w3.org/1999/xhtml">Terms of Use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx" id="BaseFooterLinks_41253_30" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/info/privacy.mspx" id="BaseFooterLinks_41253_31" xmlns="http://www.w3.org/1999/xhtml">Privacy Statement</a>
+      </li>
+    </ul>
+  </div>
+</div>  
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div> 
+
+
+            <div class="footerPrintView">
+                <div class="footerCopyrightPrintView">© 2015 Microsoft</div>
+            </div>
+
+            
+            
+    
+
+
+
+            <input id="MtpsDevice" type="hidden" value="Default">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+
+            
+            
+            
+            
+            
+
+
+
+
+
+
+<noscript>&lt;div&gt;&lt;img alt="DCSIMG" id="Img1" width="1" height="1" src="https://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;amp;WT.js=No" /&gt;&lt;/div&gt;</noscript>
+
+
+
+
+
+
+
+
+
+<noscript>
+  &lt;a href="http://www.omniture.com" title="Web Analytics"&gt;
+    &lt;img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /&gt;
+  &lt;/a&gt;
+</noscript>
+            
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" type="hidden" value="-0Md8aTtCaAegdwB04D914FCYczbsTtgXSBgrf7KRqt2W3R52Sde5QXirXFCV7eZ-NvIu88sH1s7xNNFd-v6lctMVak1">
+</div>
+
+
+        </div>
+
+        
+        
+        
+        
+    <script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"xap\": \"https://msdn.microsoft.com\"\r\n});\r\n/**/" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js" },
+	{ txt: "//\n  var literalNormalizedUrl = \u0027/en-us/library/office/ms464040(l=en-us,v=office.14).aspx\u0027;\n  var wt_nvr_ru = \u0027WT_NVR_RU\u0027;\n  var wt_fpcdom = \u0027.microsoft.com\u0027;\n  var wt_domlist = \u0027msdn.microsoft.com\u0027;\n  var wt_pathlist = \u0027\u0027;\n  var wt_paramlist = \u0027DCSext.mtps_devcenter\u0027;\n  var wt_siteid = \u0027MSDN\u0027;\n  var gDomain = \u0027m.webtrends.com\u0027;\n  var gDcsId = \u0027dcsmgru7m99k7mqmgrhudo0k8_8c6m\u0027;\n  var gFpc = \u0027WT_FPC\u0027;\n\n\n\n  if (document.cookie.indexOf(gFpc + \"=\") == -1) {\n    var wtidJs = document.createElement(\"script\");\n    wtidJs.src = \"//\" + gDomain + \"/\" + gDcsId + \"/wtid.js\";\n    document.getElementsByTagName(\"head\")[0].appendChild(wtidJs);\n  }\n\n\n\n  var detectedLocale = \u0027en-us\u0027;\n  var wtsp = \u0027_msdn_\u0027;\n  var gTrackEvents = \u00270\u0027;\n/**/" },
+	{ txt: "/**/\n  var omni_guid = \"25cab05b-09ab-4b6a-87c1-9b7b354db052\";\n/**/" },
+	{ txt: "//\n\n            window.appInsightsId = \u002760854590-027a-4ae4-98be-2741a40f355f\u0027;\n            //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Rating,0:Topic,2:webtrendsscript,3:omni_rsid_MSDN,4:WEDCS,0:AppInsightsPerf,5:Toc,1:TocNavigation_ShowSecondLevelInDropDown,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Global/Content/Webtrends/resources:2,/Areas/Global/Content/Omniture/resources/MSDN:3,/Areas/Library/Themes/Base/Content:4,/Areas/Library/Content:5\u0026amp;hashKey=8C195165B6D1160982FD512D4B6F4B47\u0026amp;v=97B91003C0896054A9F5A1291FF4FDC1" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026brand=Msdn\u0026loc=en-us\u0026Refinement=68\u0026focusOnInit=false\u0026iroot=office\u0026emptyWatermark=true\u0026searchButtonTooltip=Search here" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Areas/Library/Content/NavigationResize.js" },
+	{ txt: "MTPS = window.MTPS || {}; MTPS.LocalizedStrings = window.MTPS.LocalizedStrings || {}; MTPS.LocalizedStrings.ExpandButtonTooltip = \u0027Expand\u0027; MTPS.LocalizedStrings.CollapseButtonTooltip = \u0027Collapse\u0027; MTPS.LocalizedStrings.EnhancedExpandTooltip = \u0027Click to expand. Double-click to expand all.\u0027; MTPS.LocalizedStrings.EnhancedCollapseTooltip = \u0027Click to collapse. Double-click to collapse all.\u0027; MTPS.LocalizedStrings.ExpandAllButtonTooltip = \u0027Expand All\u0027; MTPS.LocalizedStrings.CollapseAllButtonTooltip = \u0027Collapse All\u0027;" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:LibraryMemberFilter,1:Toc_Fixed,1:CodeSnippet,1:TopicNotInScope,1:CollapsibleArea,1:VersionSelector,1:SurveyBroker;/Areas/Library/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=BA0D41FD888DE12A388DAF9CAC70144D\u0026amp;v=97B91003C0896054A9F5A1291FF4FDC1" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+<span style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: none; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=); background-color: transparent;"></span><script src="./Walkthrough_ Creating a Custom ASP.NET Web Service_files/broker-config.js"></script></body></html>

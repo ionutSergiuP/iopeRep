@@ -1,0 +1,68 @@
+# try catch
+try
+{
+ some to do....
+}
+catch(FileNotFoundException ex)
+{
+	Console.Writeline("Messagex {0}",ex.FileName);  // {0} = ex.FileName
+	//ex.Message -> simple message
+	
+# using "\" in string
+ foo = "@C:\temp\folder";
+ 
+#
+// allow user to drop - if is no administrator is not allowed by default
+       /* [DllImport("user32.dll", SetLastError = true)]
+         static extern bool ChangeWindowMessageFilter(uint message, uint dwFlag);
+
+         private const uint WM_DROPFILES = 0x233;
+         private const uint WM_COPYDATA = 0x004A;
+         private const uint WM_COPYGLOBALDATA = 0x0049;
+         private const uint MSGFLT_ADD = 1;
+
+        static private void AllowDrop()
+        {
+
+            ChangeWindowMessageFilter(WM_DROPFILES, MSGFLT_ADD);
+            ChangeWindowMessageFilter(WM_COPYDATA, MSGFLT_ADD);
+            ChangeWindowMessageFilter(0x0049, MSGFLT_ADD);
+        }*/
+		
+# read XML
+
+     string contents="";
+            XmlTextReader reader = new XmlTextReader(@"c:\Users\uidv4843\Desktop\WORKSPACE\eg_configuration_file.xml");
+
+            while (reader.Read())
+            {
+                reader.MoveToContent();
+                if (reader.NodeType == XmlNodeType.Element)
+                    if (reader.Name.Equals("PROJECT_NAME"))
+                    {
+                        reader.Read();
+                        if (reader.NodeType == XmlNodeType.Text)
+                            contents += reader.Value;
+                    }       
+                  
+                   // contents += "<" + reader.Name + ">\n";
+               
+            }
+			
+# create proxy class
+	- use wsdl.exe with Visual Studio Command prompt: wsdl.exe /out:proxyClass.cs url_link.asmx?wsdl
+	- start Visual Studio cmd -> Start -> all programs -> Microsoft Visual Studio -> Visual Studio tools
+	- another alternative is svcutil.exe : svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/ServiceModelSamples/service
+	- create ProxyClass object and call method.
+	
+# http request error 407 proxy authentification required:
+	- set in App.config:
+		<?xml version="1.0" encoding="utf-8" ?>
+			<configuration>
+			  <system.net>
+				<defaultProxy enabled="true" useDefaultCredentials="true"/>
+			  </system.net>
+			</configuration>
+			
+	- if not work , erase App.config file and create again from project:
+		-> Add -> new item -> Application Configuration File

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>SREC (file format) - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf21" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/SREC_(file_format)" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=SREC_(file_format)&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=SREC_(file_format)&amp;action=edit" />
+<link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/SREC_(file_format)" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/SREC_(file_format)" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SREC_(file_format)","wgTitle":"SREC (file format)","wgCurRevisionId":650559921,"wgRevisionId":650559921,"wgArticleId":6766701,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Binary-to-text encoding formats","Embedded systems","Computer file formats"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SREC_(file_format)","wgRelevantArticleId":6766701,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr"},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgULSAcceptLanguageList":["sv-se","sv","en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q947746"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});},{},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:94007ea073e20ad4a3cdce36b2f2e369 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.imageMetrics.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf21/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-SREC_file_format skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">SREC (file format)</h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="infobox" style="width:22em">
+<caption style="font-size:130%; padding-bottom:0.15em;">S-record</caption>
+<tr>
+<td colspan="2" style="text-align:center"><a href="/wiki/File:Motorola_SREC_Chart.png" class="image"><img alt="Motorola SREC Chart.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Motorola_SREC_Chart.png/230px-Motorola_SREC_Chart.png" width="230" height="158" class="thumbborder" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Motorola_SREC_Chart.png/345px-Motorola_SREC_Chart.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Motorola_SREC_Chart.png/460px-Motorola_SREC_Chart.png 2x" data-file-width="3509" data-file-height="2416" /></a>
+<div>A quick reference chart for the Motorola SREC format.</div>
+</td>
+</tr>
+<tr>
+<th scope="row" style="text-align:left;padding:0.2em 0;line-height:1.2em; padding-right:0.65em;"><a href="/wiki/Filename_extension" title="Filename extension">Filename extension</a></th>
+<td style="line-height:1.35em;"><code><tt>.s19</tt>, <tt>.s28</tt>, <tt>.s37</tt>, <tt>.s</tt>, <tt>.s1</tt>, <tt>.s2</tt>, <tt>.s3</tt>, <tt>.sx</tt>, <tt>.srec</tt>, <tt>.mot</tt></code></td>
+</tr>
+</table>
+<p><b>Motorola S-record</b> is a file format, created by <a href="/wiki/Motorola" title="Motorola">Motorola</a>, that conveys binary information in ASCII <a href="/wiki/Hexadecimal" title="Hexadecimal">hex</a> text form. This file format may also be known as <b>SRECORD</b>, <b>SREC</b>, <b>S19</b>, <b>S28</b>, <b>S37</b>. It is commonly used for programming microcontrollers, EPROMs, and other types of programmable logic devices. In a typical application, a compiler or assembler converts a program's source code (such as C or assembly language) to machine code and outputs it into a HEX file. The HEX file is then imported by a programmer to "burn" the machine code into a ROM, or is transferred to the target system for loading and execution.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Other_hex_formats"><span class="tocnumber">1.1</span> <span class="toctext">Other hex formats</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Format"><span class="tocnumber">2</span> <span class="toctext">Format</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Record_structure"><span class="tocnumber">2.1</span> <span class="toctext">Record structure</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Text_line_terminators"><span class="tocnumber">2.2</span> <span class="toctext">Text line terminators</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Record_types"><span class="tocnumber">2.3</span> <span class="toctext">Record types</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Record_order"><span class="tocnumber">2.4</span> <span class="toctext">Record order</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Limitations"><span class="tocnumber">2.5</span> <span class="toctext">Limitations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#Checksum_calculation"><span class="tocnumber">3.1</span> <span class="toctext">Checksum calculation</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#16-bit_memory_address"><span class="tocnumber">3.2</span> <span class="toctext">16-bit memory address</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Further_reading"><span class="tocnumber">6</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Overview">Overview</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=1" title="Edit section: Overview">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The S-record format was created in the mid-1970s for the <a href="/wiki/Motorola_6800" title="Motorola 6800">Motorola 6800</a> processor. <a href="/wiki/Programming_tool" title="Programming tool">Software development tools</a> for that and other <a href="/wiki/Embedded_processor" title="Embedded processor" class="mw-redirect">embedded processors</a> would make executable code and data in the S-record format. PROM programmers would then read the S-record format and "burn" the data into the PROMs or EPROMs used in the embedded system.</p>
+<h3><span class="mw-headline" id="Other_hex_formats">Other hex formats</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=2" title="Edit section: Other hex formats">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are other ASCII encoding with a similar purpose. BPNF, BHLF, and B10F were early binary formats, but they are neither compact nor flexible. Hexadecimal formats are more compact because they represent 4 bits rather than 1 bit per character. Many, such as S-record, are more flexible because they include address information so they can specify just a portion of a PROM. <a href="/wiki/Intel_HEX" title="Intel HEX">Intel HEX</a> format was often used with Intel processors. Tek Hex is another hex format that can include a symbol table for debugging.</p>
+<h2><span class="mw-headline" id="Format">Format</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=3" title="Edit section: Format">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Record_structure">Record structure</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=4" title="Edit section: Record structure">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<table class="wikitable">
+<tr>
+<td>S</td>
+<td>Type</td>
+<td>Byte Count</td>
+<td>Address</td>
+<td>Data</td>
+<td>Checksum</td>
+</tr>
+</table>
+<p>An SREC format file consists of a series of ASCII text records. The records have the following structure from left to right:</p>
+<ol>
+<li><b>Record type</b>, two characters, an uppercase "S" (0x53) then a numeric digit <i>0</i> to <i>9</i>, defining the type of record.</li>
+<li><b>Byte count</b>, two hex digits, indicating the number of bytes (hex digit pairs) that follow in the rest of the record (address + data + checksum). This field has a minimum value of 3 for 16-bit address field plus 1 checksum byte, and a maximum value of 255 (0xFF).</li>
+<li><b>Address</b>, four / six / eight hex digits as determined by the record type. The address bytes are arranged in <a href="/wiki/Endianness" title="Endianness">big endian</a> format.</li>
+<li><b>Data</b>, a sequence of 2<i>n</i> hex digits, for <i>n</i> bytes of the data. For S1/S2/S3 records, a maximum of 32 bytes per record is typical since it will fit on an 80 character wide terminal screen, though 16 bytes would be easier to visually decode each byte at a specific address.</li>
+<li><b>Checksum</b>, two hex digits, the <a href="/wiki/Least_significant_byte" title="Least significant byte" class="mw-redirect">least significant byte</a> of <a href="/wiki/Ones%27_complement" title="Ones' complement">ones' complement</a> of the sum of the values represented by the two hex digit pairs for the byte count, address and data fields. See example section for a detailed checksum example.</li>
+</ol>
+<h3><span class="mw-headline" id="Text_line_terminators">Text line terminators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=5" title="Edit section: Text line terminators">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>SREC records are separated by one or more ASCII line termination characters so that each record appears alone on a text line. This enhances legibility by visually <a href="/wiki/Delimiter" title="Delimiter">delimiting</a> the records and it also provides padding between records that can be used to improve machine <a href="/wiki/Parsing" title="Parsing">parsing</a> efficiency.</p>
+<p>Programs that create HEX records typically use line termination characters that conform to the conventions of their <a href="/wiki/Operating_system" title="Operating system">operating systems</a>. For example, Linux programs use a single LF (<a href="/wiki/Newline" title="Newline">line feed</a>, hex value <code>0A</code>) character to terminate lines, whereas Windows programs use a CR (<a href="/wiki/Carriage_return" title="Carriage return">carriage return</a>, hex value <code>0D</code>) followed by a LF.</p>
+<h3><span class="mw-headline" id="Record_types">Record types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=6" title="Edit section: Record types">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The following table describes 10 possible S-records. S4 is reserved and not currently defined. S6 was originally reserved but was later redefined at some point.</p>
+<table class="wikitable">
+<tr>
+<th>Record<br />
+Field</th>
+<th>Record<br />
+Purpose</th>
+<th>Address<br />
+Field</th>
+<th>Data<br />
+Field</th>
+<th>Record<br />
+Description</th>
+</tr>
+<tr>
+<td align="center"><b>S0</b></td>
+<td>Header</td>
+<td>16-bit<br />
+"0000"</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><img alt="Yes" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/13px-Green_check.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/20px-Green_check.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/26px-Green_check.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains vendor specific ASCII text represented as a series of hex digit pairs. It is common to see the data for this record in the format of a <a href="/wiki/Null-terminated_string" title="Null-terminated string">null-terminated string</a>. The text data can be anything including a mixture of the following information: file/module name, version/revision number, date/time, product name, vendor name, memory designator on PCB, copyright notice.</td>
+</tr>
+<tr>
+<td align="center"><b>S1</b></td>
+<td>Data</td>
+<td>16-bit<br />
+Address</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><img alt="Yes" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/13px-Green_check.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/20px-Green_check.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/26px-Green_check.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains data that starts at the 16-bit address field.<sup id="cite_ref-SREC-Unix_1-0" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> This record is typically used for 8-bit microcontrollers, such as AVR, PIC, 8051, 68xx, 6502, 80xx, Z80. The number of bytes of data contained in this record is "Byte Count Field" minus 3, which is 2 bytes for "16-bit Address Field" and 1 byte for "Checksum Field".</td>
+</tr>
+<tr>
+<td align="center"><b>S2</b></td>
+<td>Data</td>
+<td>24-bit<br />
+Address</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><img alt="Yes" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/13px-Green_check.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/20px-Green_check.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/26px-Green_check.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains data that starts at a 24-bit address.<sup id="cite_ref-SREC-Unix_1-1" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> The number of bytes of data contained in this record is "Byte Count Field" minus 4, which is 3 bytes for "24-bit Address Field" and 1 byte for "Checksum Field".</td>
+</tr>
+<tr>
+<td align="center"><b>S3</b></td>
+<td>Data</td>
+<td>32-bit<br />
+Address</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes"><img alt="Yes" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/13px-Green_check.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/20px-Green_check.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/03/Green_check.svg/26px-Green_check.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains data that starts at a 32-bit address.<sup id="cite_ref-SREC-Unix_1-2" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> This record is typically used for 32-bit microcontrollers, such as ARM and 680x0. The number of bytes of data contained in this record is "Byte Count Field" minus 5, which is 4 bytes for "32-bit Address Field" and 1 byte for "Checksum Field".</td>
+</tr>
+<tr>
+<td align="center"><b>S4</b></td>
+<td>Reserved</td>
+<td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"><small>N/A</small></td>
+<td style="background: #ececec; color: grey; vertical-align: middle; text-align: center;" class="table-na"><small>N/A</small></td>
+<td>This record is reserved.</td>
+</tr>
+<tr>
+<td align="center"><b>S5</b></td>
+<td>Count</td>
+<td>16-bit<br />
+Count</td>
+<td style="background: #FF9090; color:black; vertical-align: middle; text-align: center;" class="table-no"><img alt="No" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/13px-Red_x.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/20px-Red_x.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/26px-Red_x.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This optional record contains a 16-bit count of <b>S1</b> / <b>S2</b> / <b>S3</b> records.<sup id="cite_ref-SREC-Unix_1-3" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> This record is used if the record count is less than or equal to 65,535 (0xFFFF), otherwise <b>S6</b> record would be used.</td>
+</tr>
+<tr>
+<td align="center"><b>S6</b></td>
+<td>Count</td>
+<td>24-bit<br />
+Count</td>
+<td style="background: #FF9090; color:black; vertical-align: middle; text-align: center;" class="table-no"><img alt="No" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/13px-Red_x.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/20px-Red_x.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/26px-Red_x.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This optional record contains a 24-bit count of <b>S1</b> / <b>S2</b> / <b>S3</b> records. This record is used if the record count is less than or equal to 16,777,215 (0xFFFFFF). If less than 65,536 (0x010000), then <b>S5</b> record would be used. <b>NOTE:</b> This newer record is the most recent change (not sure if official).<sup id="cite_ref-SREC-Unix_1-4" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup></td>
+</tr>
+<tr>
+<td align="center"><b>S7</b></td>
+<td>Start Address<br />
+(Termination)</td>
+<td>32-bit<br />
+Address</td>
+<td style="background: #FF9090; color:black; vertical-align: middle; text-align: center;" class="table-no"><img alt="No" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/13px-Red_x.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/20px-Red_x.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/26px-Red_x.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains the starting execution location at a 32-bit address.<sup id="cite_ref-SREC-Unix_1-5" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup><sup id="cite_ref-SREC-term_2-0" class="reference"><a href="#cite_note-SREC-term-2"><span>[</span>2<span>]</span></a></sup> This is used to terminate a series of <b>S3</b> records. If a SREC file is only used to program a memory device and the execution location is ignored, then an address of zero could be used.</td>
+</tr>
+<tr>
+<td align="center"><b>S8</b></td>
+<td>Start Address<br />
+(Termination)</td>
+<td>24-bit<br />
+Address</td>
+<td style="background: #FF9090; color:black; vertical-align: middle; text-align: center;" class="table-no"><img alt="No" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/13px-Red_x.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/20px-Red_x.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/26px-Red_x.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains the starting execution location at a 24-bit address.<sup id="cite_ref-SREC-Unix_1-6" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup><sup id="cite_ref-SREC-term_2-1" class="reference"><a href="#cite_note-SREC-term-2"><span>[</span>2<span>]</span></a></sup> This is used to terminate a series of <b>S2</b> records. If a SREC file is only used to program a memory device and the execution location is ignored, then an address of zero could be used.</td>
+</tr>
+<tr>
+<td align="center"><b>S9</b></td>
+<td>Start Address<br />
+(Termination)</td>
+<td>16-bit<br />
+Address</td>
+<td style="background: #FF9090; color:black; vertical-align: middle; text-align: center;" class="table-no"><img alt="No" src="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/13px-Red_x.svg.png" width="13" height="13" srcset="//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/20px-Red_x.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/b/ba/Red_x.svg/26px-Red_x.svg.png 2x" data-file-width="600" data-file-height="600" /></td>
+<td>This record contains the starting execution location at a 16-bit address.<sup id="cite_ref-SREC-Unix_1-7" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup><sup id="cite_ref-SREC-term_2-2" class="reference"><a href="#cite_note-SREC-term-2"><span>[</span>2<span>]</span></a></sup> This is used to terminate a series of <b>S1</b> records. If a SREC file is only used to program a memory device and the execution location is ignored, then an address of zero could be used.</td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Record_order">Record order</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=7" title="Edit section: Record order">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Quoted from old Unix documentation "the order of S-records within a file is of no significance and no particular order may be assumed",<sup id="cite_ref-SREC-Unix_1-8" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> though in practice most software has ordered the SREC records. The typical record order starts with a S0 record, followed by one or more S1/S2/S3 data records, then one optional S5/S6 count record, and ending with one S7/S8/S9 record.</p>
+<dl>
+<dt>S19-style 16-bit address records</dt>
+</dl>
+<ol>
+<li>S0</li>
+<li>S1 (one or more records)</li>
+<li>S5 (optional record)</li>
+<li>S9</li>
+</ol>
+<dl>
+<dt>S28-style 24-bit address records</dt>
+</dl>
+<ol>
+<li>S0</li>
+<li>S2 (one or more records)</li>
+<li>S5 (optional record)</li>
+<li>S8</li>
+</ol>
+<dl>
+<dt>S37-style 32-bit address records</dt>
+</dl>
+<ol>
+<li>S0</li>
+<li>S3 (one or more records)</li>
+<li>S5 (optional record)</li>
+<li>S7</li>
+</ol>
+<h3><span class="mw-headline" id="Limitations">Limitations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=8" title="Edit section: Limitations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><b>Record length</b> - Unix manual page documentation states, "An S-record file consists of a sequence of specially formatted ASCII character strings. An S-record will be less than or equal to 78 bytes in length." The manual page further limits the number of characters in the data field to 64 (or 32 data bytes).<sup id="cite_ref-SREC-Unix_1-9" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> A record with an 8-hex-character address and 64 data characters would be 78 (2+2+8+64+2) characters long (this count ignores possible end-of-line or string termination characters). The file could be printed on an 80-character wide teleprinter. A note at the bottom of the manual page states, "This [manual page] is the only place that a 78-byte limit on total record length or 64-byte limit on data length is documented. These values shouldn't be trusted for the general case."<sup id="cite_ref-SREC-Unix_1-10" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> If that limitation is ignored, the maximum length of an S-record is 514 characters: 2 for Record Type field + 2 for Byte Count field (whose value would be <code>0xFF=255</code>) + 2*255 for Address, Data, and Checksum fields. Additional buffer space may be required for the line and string terminators. Using long line lengths has problems: "The Motorola S-record format definition permits up to 255 bytes of payload, or lines of 514 characters, plus the line termination. All EPROM programmers should have sufficiently large line buffers to cope with records this big. Few do."<sup id="cite_ref-sf_3-0" class="reference"><a href="#cite_note-sf-3"><span>[</span>3<span>]</span></a></sup></p>
+<p><b>Data field</b> - Some documentation recommends a maximum of 32 bytes of data (64 hex characters) in this field.<sup id="cite_ref-SREC-Unix_1-11" class="reference"><a href="#cite_note-SREC-Unix-1"><span>[</span>1<span>]</span></a></sup> The minimum amount of data for S0/S1/S2/S3 records is zero. The maximum amount of data varies depending on the size of the address field. Since the Byte Count field can't be higher than 255 (0xFF), then the maximum number of bytes of data is calculated by 255 minus (1 byte for checksum field) minus (number of bytes in the address field). S0/S1 records support up to 252 bytes of data. S2 record supports up to 251 bytes of data. S3 record supports up to 250 bytes of data.</p>
+<p><b>Comments</b> - The SREC file format does not support comments. Some software ignores all text lines that do not start with "S" and ignores all text after the checksum field; that extra text is sometimes used (incompatibly) for comments. For example, the CCS PIC compiler supports placing a ";" comment line at the top or bottom of an <a href="/wiki/Intel_HEX" title="Intel HEX">Intel HEX</a> file, and its manuals states "some programmers (MPLAB in particular) do not like comments at the top of the hex file", which is why the compiler has the option of placing the comment at the bottom of the hex file.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4"><span>[</span>4<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=9" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>Color legend</dt>
+</dl>
+<p><span style="display:inline-block; width:1.5em; height:1.5em; margin:1px 0; border:1px solid black; background-color: #FFCCCC; color:black; font-size:100%; text-align:center;">&#160;</span>&#160;Record type <span style="display:inline-block; width:1.5em; height:1.5em; margin:1px 0; border:1px solid black; background-color: #CCFFCC; color:black; font-size:100%; text-align:center;">&#160;</span>&#160;Byte count <span style="display:inline-block; width:1.5em; height:1.5em; margin:1px 0; border:1px solid black; background-color: #CCCCFF; color:black; font-size:100%; text-align:center;">&#160;</span>&#160;Address <span style="display:inline-block; width:1.5em; height:1.5em; margin:1px 0; border:1px solid black; background-color: #CCFFFF; color:black; font-size:100%; text-align:center;">&#160;</span>&#160;Data <span style="display:inline-block; width:1.5em; height:1.5em; margin:1px 0; border:1px solid black; background-color: #CCCCCC; color:black; font-size:100%; text-align:center;">&#160;</span>&#160;Checksum</p>
+<h3><span class="mw-headline" id="Checksum_calculation">Checksum calculation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=10" title="Edit section: Checksum calculation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The following example record:</p>
+<pre>
+<span style="background-color: #FFCCCC">S1</span><span style="background-color: #CCFFCC">13</span><span style="background-color: #CCCCFF">7AF0</span><span style="background-color: #CCFFFF">0A0A0D00000000000000000000000000</span><span style="background-color: #CCCCCC">61</span>
+</pre>
+<p>is decoded to show how the checksum value is calculated as follows:</p>
+<ol>
+<li>Add: add each byte <span style="background-color: #CCFFCC">13</span> + <span style="background-color: #CCCCFF">7A+F0</span> + <span style="background-color: #CCFFFF">0A+0A+0D+00+00+00+00+00+00+00+00+00+00+00+00+00</span> = 19E (hex) total.</li>
+<li>Mask: keep the least significant byte of the total = 9E (hex).</li>
+<li>Complement: compute <a href="/wiki/Ones%27_complement" title="Ones' complement">ones' complement</a> of least significant byte = <span style="background-color: #CCCCCC">61</span> (hex).</li>
+</ol>
+<h3><span class="mw-headline" id="16-bit_memory_address">16-bit memory address</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=11" title="Edit section: 16-bit memory address">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<pre>
+<span style="background-color: #FFCCCC">S0</span><span style="background-color: #CCFFCC">0F</span><span style="background-color: #CCCCFF">0000</span><span style="background-color: #CCFFFF">68656C6C6F20202020200000</span><span style="background-color: #CCCCCC">3C</span>
+<span style="background-color: #FFCCCC">S1</span><span style="background-color: #CCFFCC">1F</span><span style="background-color: #CCCCFF">0000</span><span style="background-color: #CCFFFF">7C0802A6900100049421FFF07C6C1B787C8C23783C60000038630000</span><span style="background-color: #CCCCCC">26</span>
+<span style="background-color: #FFCCCC">S1</span><span style="background-color: #CCFFCC">1F</span><span style="background-color: #CCCCFF">001C</span><span style="background-color: #CCFFFF">4BFFFFE5398000007D83637880010014382100107C0803A64E800020</span><span style="background-color: #CCCCCC">E9</span>
+<span style="background-color: #FFCCCC">S1</span><span style="background-color: #CCFFCC">11</span><span style="background-color: #CCCCFF">0038</span><span style="background-color: #CCFFFF">48656C6C6F20776F726C642E0A00</span><span style="background-color: #CCCCCC">42</span>
+<span style="background-color: #FFCCCC">S5</span><span style="background-color: #CCFFCC">03</span><span style="background-color: #CCCCFF">0003</span><span style="background-color: #CCCCCC">F9</span>
+<span style="background-color: #FFCCCC">S9</span><span style="background-color: #CCFFCC">03</span><span style="background-color: #CCCCFF">0000</span><span style="background-color: #CCCCCC">FC</span>
+</pre>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/Template:SREC_HEX" title="Template:SREC HEX">Template:SREC HEX</a>, wiki template to easily display an SREC Hex record in any Wikipedia article.</li>
+<li><a href="/wiki/Intel_HEX" title="Intel HEX">Intel HEX</a>, hex file format by Intel</li>
+<li><a href="/wiki/Tektronix_extended_HEX" title="Tektronix extended HEX">TekHex</a>, hex file format by Tektronix</li>
+<li><a href="/wiki/Binary-to-text_encoding" title="Binary-to-text encoding">Binary-to-text encoding</a>, comparison of various encoding algorithms</li>
+<li><a href="/wiki/GNU_Binutils" title="GNU Binutils">GNU Binutils</a> <i>objdump</i> and <i>objcopy</i> programs can produce and display S-records.</li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=13" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-SREC-Unix-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-SREC-Unix_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-3"><sup><i><b>d</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-4"><sup><i><b>e</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-5"><sup><i><b>f</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-6"><sup><i><b>g</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-7"><sup><i><b>h</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-8"><sup><i><b>i</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-9"><sup><i><b>j</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-10"><sup><i><b>k</b></i></sup></a> <a href="#cite_ref-SREC-Unix_1-11"><sup><i><b>l</b></i></sup></a></span> <span class="reference-text"><span class="citation web"><a rel="nofollow" class="external text" href="http://www.amelek.gda.pl/avr/uisp/srecord.htm">"Motorola S-records from Unix man pages."</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2014-06-30</span></span>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.btitle=Motorola+S-records+from+Unix+man+pages.&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.amelek.gda.pl%2Favr%2Fuisp%2Fsrecord.htm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-SREC-term-2"><span class="mw-cite-backlink">^ <a href="#cite_ref-SREC-term_2-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-SREC-term_2-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-SREC-term_2-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><span id="CITEREFMotorola1992" class="citation">Motorola (1992), "Appendix C", <a rel="nofollow" class="external text" href="http://www.freescale.com/files/archives/doc/ref_manual/M68000PRM.pdf"><i>M68000 Family Programmer's Reference Manual</i></a> (rev. 1 ed.), Motorola (Freescale), pp.&#160;C–1–C–5, <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0137232895" title="Special:BookSources/978-0137232895">978-0137232895</a></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.atitle=Appendix+C&amp;rft.aulast=Motorola&amp;rft.au=Motorola&amp;rft.btitle=M68000+Family+Programmer%27s+Reference+Manual&amp;rft.date=1992&amp;rft.edition=rev.+1&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fwww.freescale.com%2Ffiles%2Farchives%2Fdoc%2Fref_manual%2FM68000PRM.pdf&amp;rft.isbn=978-0137232895&amp;rft.pages=C-1-C-5&amp;rft.pub=Motorola+%28Freescale%29&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-sf-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-sf_3-0">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://srecord.sourceforge.net/man/man1/srec_examples.html">srec_examples; sourceforge.</a></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><span id="CITEREF2014" class="citation"><a rel="nofollow" class="external text" href="http://www.ccsinfo.com/downloads/ccs_c_manual.pdf"><i>CCS Compiler Reference Manual PCB/PCM/PCH</i></a>, Custom Computer Services, Inc., May 2014, p.&#160;107<span class="reference-accessdate">, retrieved <span class="nowrap">8 February</span> 2015</span></span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.btitle=CCS+Compiler+Reference+Manual+PCB%2FPCM%2FPCH&amp;rft.date=May+2014&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww.ccsinfo.com%2Fdownloads%2Fccs_c_manual.pdf&amp;rft.pages=107&amp;rft.pub=Custom+Computer+Services%2C+Inc.&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=14" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span id="CITEREF1990" class="citation"><i>M68HC05EVM Evaluation Module User's Manual</i> (4th ed.), Motorola (Freescale), 1990</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.btitle=M68HC05EVM+Evaluation+Module+User%27s+Manual&amp;rft.date=1990&amp;rft.edition=4th&amp;rft.genre=book&amp;rft.pub=Motorola+%28Freescale%29&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> Appendix A, "S Record Information", page A-1, states, "For compatibility with teletypewriters, some programs may limit the number of [data] bytes to as few as 28 (56 printable characters in the S-record)."</li>
+<li><span id="CITEREF1983" class="citation"><a rel="nofollow" class="external text" href="https://archive.org/details/bitsavers_motorola68ionModuleUsersManualDec83_3216374"><i>M146805EVM Evaluation Module Users Manual</i></a> (1st ed.), Motorola (Freescale), 1983</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.btitle=M146805EVM+Evaluation+Module+Users+Manual&amp;rft.date=1983&amp;rft.edition=1st&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fbitsavers_motorola68ionModuleUsersManualDec83_3216374&amp;rft.pub=Motorola+%28Freescale%29&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+<li><span id="CITEREF1975" class="citation"><i>MCM6830L7 MIKBUG / MINIBUG ROM</i>, Engineering Note 100, Motorola (Freescale), 1975</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASREC+%28file+format%29&amp;rft.btitle=MCM6830L7+MIKBUG+%2F+MINIBUG+ROM&amp;rft.date=1975&amp;rft.genre=book&amp;rft.pub=Motorola+%28Freescale%29&amp;rft.series=Engineering+Note+100&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit&amp;section=15" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<dl>
+<dt>Software</dt>
+</dl>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://srecord.sourceforge.net/">SRecord</a> is a collection of tools for manipulating SREC format files.</li>
+<li><a rel="nofollow" class="external text" href="http://www.keil.com/download/docs/4.asp">BIN2MOT</a>, BINARY to Motorola S-Record file converter utility.</li>
+<li><a rel="nofollow" class="external text" href="http://srecordizer.codeplex.com/">SRecordizer</a> is a tool for viewing, editing, and error checking S19 format files.</li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1040
+CPU time usage: 0.309 seconds
+Real time usage: 0.491 seconds
+Preprocessor visited node count: 1021/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 17741/2097152 bytes
+Template argument size: 781/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/500
+Lua time usage: 0.056/10.000 seconds
+Lua memory usage: 1.92 MB/50 MB
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  299.476      1 - -total
+ 39.39%  117.964      5 - Template:Na
+ 23.69%   70.960      1 - Template:Reflist
+ 17.67%   52.903      1 - Template:Infobox_file_format
+ 15.99%   47.898      1 - Template:Infobox
+ 11.47%   34.360      1 - Template:Cite_web
+  8.78%   26.305      5 - Template:Citation
+  3.31%    9.927      7 - Template:SREC_HEX
+  2.14%    6.403      5 - Template:Legend_inline
+  0.89%    2.651      4 - Template:Ya
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:6766701-0!*!0!!en!4!* and timestamp 20150321133445 and revision id 650559921
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=SREC_(file_format)&amp;oldid=650559921">http://en.wikipedia.org/w/index.php?title=SREC_(file_format)&amp;oldid=650559921</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Binary-to-text_encoding_formats" title="Category:Binary-to-text encoding formats">Binary-to-text encoding formats</a></li><li><a href="/wiki/Category:Embedded_systems" title="Category:Embedded systems">Embedded systems</a></li><li><a href="/wiki/Category:Computer_file_formats" title="Category:Computer file formats">Computer file formats</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=SREC+%28file+format%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=SREC+%28file+format%29" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/SREC_(file_format)"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:SREC_(file_format)"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/SREC_(file_format)" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=SREC_(file_format)&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=SREC_(file_format)&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikimedia Shop">Wikipedia store</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/SREC_(file_format)" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/SREC_(file_format)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="/w/index.php?title=SREC_(file_format)&amp;oldid=650559921" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/w/index.php?title=SREC_(file_format)&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q947746" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=SREC_%28file_format%29&amp;id=650559921" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=SREC+%28file+format%29">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=SREC+%28file+format%29&amp;oldid=650559921&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="/w/index.php?title=SREC_(file_format)&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/S-Record" title="S-Record – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/SREC" title="SREC – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="//fr.wikipedia.org/wiki/S-Record" title="S-Record – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="//it.wikipedia.org/wiki/S-record" title="S-record – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="//pt.wikipedia.org/wiki/S19" title="S19 – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="//ru.wikipedia.org/wiki/SREC" title="SREC – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="edit" href="//www.wikidata.org/wiki/Q947746#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 March 2015, at 04:21.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=SREC_(file_format)&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.25wmf21/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="//bits.wikimedia.org/static-1.25wmf21/resources/assets/poweredby_mediawiki_132x47.png 1.5x, //bits.wikimedia.org/static-1.25wmf21/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.wikiEditor.init","mmv.bootstrap.autostart","ext.imageMetrics.loader","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents.statsd","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":121,"wgHostname":"mw1040"});
+}</script>
+	</body>
+</html>

@@ -1,0 +1,646 @@
+
+<html>
+<head>
+
+
+<meta name="KEYWORDS" content="SOAP,Toolkit,Microsoft,techmetrix,research,soap,JEAN-CHRISTOPHE CIMETIERE,JOHANN DUMSER,SOAP,Interoperability,Web Services,NET,XML">
+<title>perfectxml.com - MS SOAP Toolkit 2.0 Beta 1: Microsoft's ASP Implementation</title>
+<link rel="stylesheet" href="/PerfectXML.css">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<style>
+DIV.clTopMenu{position:absolute; width:125; height:600; clip:rect(0,125,14,0); visibility:hidden; z-index:31; layer-background-color:#EFF5FF; background-color:#EFF5FF}
+DIV.clTopMenuBottom{position:absolute; width:125; height:3; clip:rect(0,125,3,0); top:11; layer-background-color:#CECFCE; background-color:#CECFCE; z-index:2}
+DIV.clTopMenuText{position:absolute; width:91; left:5; top:15; font-family:arial,helvetica; font-size:10px; background-color:#EFF5FF; z-index:1} 
+.grey {
+	background-color : #ffffff;
+	border-color : #333333;
+	font-size : 10pt;
+	color : #000000;
+	font-weight : 500;
+	}	
+</style>
+
+
+
+		
+
+
+
+
+
+
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginwidth=0 marginheight="0"><a name="top"></a>
+<table height="70" width="100%" cellpadding="0" cellspacing="0" border="0" background="http://www.perfectxml.com/NI/TopBG1.gif">
+	<form action="/SiteSearch.asp" method="GET" name="searchForm" >
+	<tr>
+		<td width="50%" align="left" valign="top" ><span class="smaller_text_white"><br></span>&nbsp;<a href="/default.asp" target="_top"><img border="0" src="/images/PerfectXML.jpg" alt="perfectxml.com" ></a></td>
+		<td width="50%" valign="top">
+			
+				<span class="smaller_text_white">
+				<input class="smaller_text" style="color:#0066cc;font-weight: bold;" type="text" name="searchText" size="20" maxlength="100">
+				&nbsp;<input class="smaller_text" type="radio" name="sType" value="0" ><b>Basic Search</b>
+				&nbsp;<input class="smaller_text" type="radio" name="sType" value="1" checked><b>Advanced Search</b>&nbsp;
+				<input align="middle" type="image" src="/images2/ss.gif" border="0" vspace="0" alt="Search" id=image1 name=image1>
+				&nbsp;</span>
+			
+		</td>
+	</tr>
+	</form>
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF"  >
+	<tr>
+		<td  align="left" bgcolor="#0066cc">
+		<table border="0" cellspacing="0" cellpadding="0" bgcolor="#0066cc">
+			<tr bgcolor="#0066cc">
+			<td height="2" width="20"><img src="http://www.perfectxml.com/images/spacer.gif" width="20" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/focus.asp" onmouseover="popUp('elMenu1',event); window.status='Topics'; return true" onmouseout="popDown('elMenu1');window.status=''">Topics</a></td>
+			<td height="2" width="22"><img src="http://www.perfectxml.com/images/spacer.gif" width="22" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/infobank.asp" onmouseover="popUp('elMenu3',event); window.status='Info Bank'; return true" onmouseout="popDown('elMenu3');window.status=''">Resources</a></td>
+			<td height="2" width="22"><img src="http://www.perfectxml.com/images/spacer.gif" width="22" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/Library.asp" onmouseover="popUp('elMenu2',event); window.status='Free Library'; return true" onmouseout="popDown('elMenu2');window.status=''">Free Library</a></td>
+			<td height="2" width="22"><img src="http://www.perfectxml.com/images/spacer.gif" width="22" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/software.asp" onmouseover="popUp('elMenu4',event); window.status='Software/Tools'; return true" onmouseout="popDown('elMenu4');window.status=''">Software</a></td>
+			<td height="2" width="22"><img src="http://www.perfectxml.com/images/spacer.gif" width="22" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/technews.asp" onmouseover="popUp('elMenu5',event); window.status='News'; return true" onmouseout="popDown('elMenu5');window.status=''">XML News</a></td>
+			<td height="2" width="22"><img src="http://www.perfectxml.com/images/spacer.gif" width="22" height="10"></td>
+			<td valign="bottom" align="left" ><a class="MML" href="/aboutus.asp" onmouseover="popUp('elMenu6',event); window.status='PerfectXML'; return true" onmouseout="popDown('elMenu6');window.status=''">About Us</a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr><td height="4" background="http://www.perfectxml.com/images2/shadow.gif"><img src="/images/spacer.gif" width="1" height="4" alt=""></td></tr>
+</table>
+<table width="100%" bgcolor="#ffffff"><tr><td width="100%" align="center">
+<table width=100%><tr><td width=728><script type="text/javascript"><!--
+google_ad_client = "pub-7551064845097574";
+/* 728x90, á®§¤ ­® 11.07.10 */
+google_ad_slot = "5064462972";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><td width=728><script type="text/javascript"><!--
+google_ad_client = "pub-7551064845097574";
+/* 728x90, á®§¤ ­® 11.07.10 */
+google_ad_slot = "5064462972";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><td></table>
+</td></tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="1" bgcolor="#333333" >
+	<tr>  
+		<td> 
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="top"> 
+					<td bgcolor="#FFFFFF" align="left" valign="center">
+						<span class="small_text">&nbsp;&nbsp;You are here: <a class="normal_link" href="/default.asp">home</a> »» Info Bank »» <a class="normal_link" href="/Articles.asp">Articles</a> » MS SOAP Toolkit 2.0 Beta 1: Microsoft's ASP Implementation
+					</td>
+					<td width="165" align="right" bgcolor="#FFFFFF" nowrap valign="center">
+					<span class="datetext">Saturday,&nbsp;23&nbsp;February&nbsp;2008 </span>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<font face="verdana" size="1">&nbsp;
+
+<!-- Main Content Table  -->
+<table width="99%" border="0" cellspacing="1" cellpadding="0" bgcolor=#333333>
+	<tr>
+		<td valign="top">
+<!--Right Cell -->
+			<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#FFFFFF">
+				<tr> 
+					<td valign="top">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							
+							<tr valign="top" height=10> 
+								<td bgcolor="#FFFFFF" align="center">
+									
+									<p align="right">
+									<a class="data_link" href="/Articles.asp">Back to Articles Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span class="small_text"><br>
+									<FORM NAME="frmPrint" action="http://www.perfectxml.com/articles/xml/mstoolkit.asp" method="get">
+									<input type="hidden" name="p" value="on">
+									<span class="smaller_text"><input type="submit" value="Print this article" style="background-color:#6699CC;color:#FFFFFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</form>
+									</p>
+									
+									<span class="small_text_bold">MS SOAP Toolkit 2.0 Beta 1: Microsoft's ASP Implementation</span><br><br>
+									<table width="96%" border="1" bgcolor="#cc0000" cellspacing="0" cellpadding="1" align="center">
+										<tr>
+											<td valign="top" width="100%" align="left" bgcolor="#FFFFFF">
+											<span class="small_text">
+											<a class="data_link" rel="nofollow" href="http://www.techmetrix.com" target="parent"><img align="right" src="http://www.perfectxml.com/images/techmetrix.gif" width="184" height="47" alt="TechMetrix" border="0"></a>
+											&nbsp;Reproduced with kind permission of <a class="data_link" rel="nofollow" href="http://www.techmetrix.com" target="parent">TechMetrix Research</a>&nbsp;<img src="http://www.perfectxml.com/images/external.gif" border="0" width="23" height="13" alt="External link">
+											<br>&nbsp;Article written by: <b>JOHANN DUMSER, R&D Consultant</b> (<a href="mailto:jdumser@techmetrix.net" class="data_link">jdumser@techmetrix.net</a>&nbsp; <img src=http://www.perfectxml.com/images/mail.gif border='0' width='18' height='10' alt='E-mail'> )
+											</span>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							
+							<tr valign="top" height=10> 
+								<td bgcolor="#FFFFFF" align="left">
+									<br>
+									<span class="small_text">
+<blockquote>
+                      On December 19, 2000, Microsoft published a new version 
+                      of its SOAP Toolkit (2.0 Beta 1), supporting WSDL. This 
+                      latest version SOAP Toolkit provides: </font></p>
+                    <p align="justify"> 
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                    <ul>
+                      <li>client-side components for invoking Web Services described 
+                        by a WSDL document </li>
+                      <li>server-side components which use the WSDL and WSML (Web 
+                        Service Meta Language) documents residing on the server 
+                        to perform mapping between the Web Services invoked and 
+                        the COM object methods</li>
+                      <li>components for deserializing (breaking down), transmitting 
+                        and reserializing (putting back together) SOAP messages 
+                      </li>
+                    </ul>
+                    </font> 
+                    <p></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">SOAP 
+                      Toolkit 2.0 Beta 1 makes it possible to call services and 
+                      publish them according to two Application Program Interface 
+                      (API) levels: high or low. The choice will depend on the 
+                      characteristics of the SOAP message that you wish to send 
+                      or the level of monitoring of the service to be called.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      toolkit also provides a means to generate WSDL from the 
+                      services described in a COM object. You give the service 
+                      endpoint, the location of the related DLL, the name of the 
+                      WSDL file that you wish to build… and the wizard does the 
+                      rest. For unrecognized parameter types, it sends back '?????' 
+                      and you will then need to specify the types yourself. </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">As 
+                      the old version of SOAP Toolkit for Visual Basic 6.0 used 
+                      proprietary format SDL files, Microsoft was not making any 
+                      progress in boosting interoperability of Web Services. But 
+                      by releasing this new version of the toolkit, Microsoft 
+                      is changing its strategy and taking a step towards standardization 
+                      or, at least, interoperability of implementations. Our tests 
+                      revealed a fair level of interoperability, although some 
+                      problems were encountered with the Apache implementation.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The purpose of this document is to explain precisely how 
+                      Microsoft's SOAP Toolkit is used. </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b>Platforms 
+                      supported</b></font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Client 
+                      and server objects run in a Windows environment. </font></p>
+                    <p align="justify"> 
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                    <ul>
+                      <li> SOAP client objects run in Windows 98, ME, NT4.0 and 
+                        2000</li>
+                      <li> SOAP server objects run in Active Server Pages in Windows 
+                        2000 and NT4.0 Sp6 </li>
+                    </ul>
+                    </font> 
+                    <p></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">When 
+                      the Toolkit is installed, the XML parser (MSXML3.0) is saved 
+                      in the system. New DLLs are also registered if you have 
+                      been using the old version of SOAPToolkit released in November.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The SOAP Toolkit features two approaches for using SOAP: 
+                      a Usage approach (High API) and a Development approach (Low 
+                      API).</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+                      <b><font size="3">Usage approach: High API </font></b></font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">This 
+                      approach makes programming easy for developers by keeping 
+                      all the technical details hidden. </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"><b>Client 
+                      side: calling a Web Service with high API</b> </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      following example features a Web Service available on <a class="data_link" rel="nofollow" href="http://www.xmethods.net" target="new">http://www.xmethods.net</a> <img src=http://www.perfectxml.com/images/external.gif border='0' width='23' height='13' alt='External link'>  
+                      and performs a ping from the Xmethods server to a host using 
+                      the WSDL of the related service. First of all, the client 
+                      application instantiates a SoapClient object which is implemented 
+                      in mssoap1.dll: </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="39">
+                      <tr> 
+                        <td height="36"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">set 
+                            soapclient = CreateObject(&quot;MSSOAP.SoapClient&quot;)</font><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Once 
+                      instantiation is complete, the SOAP object can call the 
+                      mssoapinit() method. This method has three parameters: the 
+                      URI of the WSDL file, the name of the service (same name 
+                      as the SERVICE tag in the WSDL) and the port name (the same 
+                      name as the PORT tag in the WSDL). </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="49">
+                      <tr> 
+                        <td height="48"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">Call 
+                            soapclient.mssoapinit(&quot;http://www.xmethods.net/sd/ 
+                            PingService.wsdl&quot;, &quot;PingService&quot;, &quot;PingPort&quot;)</font><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><service name="BabelFish"></definitions></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Once 
+                      this call is completed, all the WSDL methods become available 
+                      (the names are those of the OPERATION tag in the WSDL), 
+                      and all that remains to be done is to choose the required 
+                      method(s).</font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="37">
+                      <tr> 
+                        <td height="32"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">wscript.echo 
+                            soapclient.pingHost("www.yahoo.fr"))</font><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"></definitions></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="left"><img src="http://www.perfectxml.com/articles/xml/images/Toolkit2.gif" width="357" height="349"></p>
+                    <p align="jusitfy"><i><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">High-API 
+                      SOAP communication: client side</font></i></p>
+                    <p align="left"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Server 
+                      side: Offering a Web Service with high API</font></b></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">To 
+                      illustrate the server side of the high API, we have directly 
+                      reproduced an example from Microsoft's SOAP Toolkit 2.0 
+                      Beta 1, included in the download file. It shows the standard 
+                      server-side model for processing a SOAP message requiring 
+                      WSDL for execution. MS SOAP Toolkit 2.0 is based on ASPs. 
+                      It starts by invoking a SoapServer object which creates 
+                      an instance of a COM object defined in the WSML document 
+                      (this document can be generated by a Toolkit, which requests 
+                      the COM object in which the services are located, the URL 
+                      of the SOAP server and the name of the required document).</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The SoapServer object decodes the parameters of the SOAP 
+                      request, and uses them to call the right methods. It retrieves 
+                      the result of the execution, places the result in a SOAP 
+                      message and sends it back to the client. </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      ASP scripts below correspond to the SOAP Endpoint ASP scripts 
+                      on the server side. </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="116">
+                      <tr> 
+                        <td height="147"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">&lt;%@ 
+                            LANGUAGE = VBScript %&gt;&lt;% Response.ContentType 
+                            = &quot;text/xml&quot; %&gt; <br>
+                            &lt;%<br>
+                            set soapserver = CreateObject(&quot;MSSOAP.SoapServer&quot;)<br>
+                            wsdl = Server.MapPath(&quot;Sample.wsdl&quot;)<br>
+                            wsml = Server.MapPath(&quot;Sample.wsml&quot;)<br>
+                            call soapserver.init(wsdl, wsml)call soapserver.SoapInvoke(request, 
+                            response)<br>
+                            %> </font><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><service name="BabelFish"></definitions></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><img src="http://www.perfectxml.com/articles/xml/images/Toolkit3.gif" width="413" height="353"></p>
+                    <p align="left"><i><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">High-API 
+                      SOAP Communication: server side</font></i></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">By 
+                      using a high API you can send and receive SOAP information 
+                      without having to write code. The Toolkit uses a WSDL file 
+                      as a method to reach the requested service. The advantage 
+                      is to be able to map an existing COM object by making it 
+                      SOAP-enabled.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font size="3">Development 
+                      Approach: Low API</font></b> </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      This approach exposes the technical details of the SOAP 
+                      message. The Toolkit offers several interfaces for low-level 
+                      transactions. These low-level interfaces enable the client 
+                      to generate SOAP messages, send them to the server and process 
+                      the responses. </font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"><b>Client 
+                      side: Calling a Web Service with a low API</b></font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The different objects used to execute SOAP messages are 
+                      as follows:</font></p>
+                    <p align="justify"> 
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                    <ul>
+                      <li> SoapConnector &#151; sends and receives SOAP messages 
+                      </li>
+                      <li> SoapSerializer &#151; builds the SOAP message and sends 
+                        it to the server </li>
+                      <li>SoapReader &#151; reads the response from the server 
+                      </li>
+                    </ul>
+                    </font> 
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Let 
+                      us use the same service to be called as for the High API 
+                      (XMethods Ping). First of all, the SoapConnector object 
+                      is created which manages the sending and receiving of SOAP 
+                      messages. The EndPoint property is then instantiated with 
+                      the service address. To initialize and prepare the connection, 
+                      you can call the Connect method. The SoapConnector's SoapAction 
+                      property provides the value required for the SOAPAction 
+                      field in the SOAP header. </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="99">
+                      <tr> 
+                        <td height="110"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">Connector.Property(&quot;EndPointURL&quot;) 
+                            = &quot;http://services.xmethods.net:80/perl/soaplite.cgi&quot; 
+                            Connector.Connect Nothing Connector.Property(&quot;SoapAction&quot;) 
+                            = &quot;urn:xmethodsSoapPing#pingHost&quot;</font><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"></definitions></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      BeginMessage method of the SoapConnector is then ready to 
+                      send the SOAP message.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      SoapSerializer object is used to manually create the message. 
+                      This creation process is very intuitive and involves creating 
+                      the payload step by step. The first step is to create the 
+                      envelope, followed by the body, then an element for which 
+                      we define:</font></p>
+                    <p align="justify"> 
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                    <ul>
+                      <li> the name of the service which will use this element 
+                      </li>
+                      <li>URI, means of coding </li>
+                      <li>tag prefix. </li>
+                    </ul>
+                    </font> 
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Next, 
+                      the name of the element and its value must be indicated. 
+                      All the Serializer properties have end properties, which 
+                      means that corresponding to Serializer.startEnvelope is 
+                      Serializer.endEnvelope. This structure corresponds to the 
+                      generation of an XML payload.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      EndMessage method of the Connector indicates the end of 
+                      the SOAP message to be sent to the server.</font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="99">
+                      <tr> 
+                        <td height="165"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">Serializer.Init 
+                            Connector.InputStream<br>
+                            </definitions></font><font face="Courier New, Courier, mono" size="2" color="#000000"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"></definitions></font><font face="Courier New, Courier, mono" size="2" color="#000000"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">Serializer.startEnvelope 
+                            Serializer.startBody<br>
+                            Serializer.startElement "pingHost",<br>
+                            "urn:xmethodsSoapPing", , "namesp01"<br>
+                            Serializer.startElement "hostname"<br>
+                            Serializer.writeString CStr("www.yahoo.com")<br>
+                            Serializer.endElement Serializer.endElement<br>
+                            Serializer.endBody Serializer.end Envelope <br>
+                            </definitions></font><font face="Courier New, Courier, mono" size="2" color="#000000"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">Connector.EndMessage</definitions></font></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      server executes the requested operation and sends back the 
+                      SOAP message. The returned Response contains either the 
+                      result of the operation, or a Fault element describing the 
+                      error. The Response object can be read with the SoapReader 
+                      object. </font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      Reader.Load Connector.OutputStream object parses the Document 
+                      Object Model (DOM) tree and reads the OutputStream message 
+                      returned. The result can then be displayed. </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="37">
+                      <tr> 
+                        <td height="55"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">Reader.Load 
+                            Connector.OutputStream <br>
+                            MsgBox Reader.RPCResult.Text</font></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><img src="http://www.perfectxml.com/articles/xml/images/Toolkit4.gif" width="286" height="200"></p>
+                    <p align="left"><i><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">SOAP 
+                      Interoperability: SOAP Client (MSSOAP) &#151; SOAP Server 
+                      (SOAP::Lite hosted by XMethods)</font></i></p>
+                    <p align="left"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Server 
+                      side: Offering a Web Service with low API</font></b></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      different elements used to process SOAP messages are as 
+                      follows:</font></p>
+                    <p align="justify"> 
+                    <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                    <ul>
+                      <li> SoapReader &#151; reads the incoming SOAP message request 
+                        and builds a DOM tree </li>
+                      <li>SoapSerializer &#151; builds the SOAP message containing 
+                        the result of the operation and sends it to the client</li>
+                    </ul>
+                    </font> 
+                    <p></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">This 
+                      example, taken from those provided in Microsoft's SOAP Toolkit 
+                      2.0 Beta1, sends 'Hello' or 'Bye Bye' depending on the name 
+                      of the requested method. The endpoint here is therefore 
+                      an ASP which manages client requests. Each time the server 
+                      receives a SOAP request, it instantiates a COM object. Then 
+                      the server invokes the Process method of this object. Its 
+                      two parameters are the incoming and outgoing SOAP messages. 
+                      The Endpoint ASP script is as follows: </font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="37">
+                      <tr> 
+                        <td height="55"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">&lt;%<br>
+                            Set SpeechSrv = Server.CreateObject(&quot;TestHello.SpeechSrv&quot;)<br>
+                            SppechSrv.Process Request, Response<br>
+                            %&gt;</font></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">On 
+                      the server side, the process in the COM object involves 
+                      three steps: retrieving the information, performing the 
+                      operation, and sending the response.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      following VB code for the COM object gives the key elements 
+                      required to carry out the operation:</font></p>
+                    <table width="100%" border="1" cellspacing="0" cellpadding="0" bordercolor="#666666" bgcolor="#CCCCCC" height="37">
+                      <tr> 
+                        <td height="55"><definitions name="BabelFishService" targetnamespace="http://www.xmethods.net/BabelFishService" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/"><message name="BabelFishRequest"><message name="BabelFishResponse"><porttype name="BabelFishPortType"><binding name="BabelFishBinding" type="BabelFishPortType"><service name="BabelFish"></definitions> 
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">' 
+                            Process function which performs the operation<br>
+                            Public Sub Process(ByVal Request As ASPTypeLibrary.Request, 
+                            _ <br>
+                            ByVal Response As ASPTypeLibrary.Response) </font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">' 
+                            Load request in Reader object<br>
+                            Reader.Load Request</font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">' 
+                            Retrieve required information<br>
+                            ' Base name - with RPCStruc.baseName property<br>
+                            MethodName = Reader.RPCStruct.baseName</font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">' 
+                            Value of element A - with property<br>
+                            RPCStruc.selectSingleNode(&quot;Tag_Name&quot;).text<br>
+                            A = CDbl(Reader.RPCStruct.selectSingleNode(&quot;A&quot;)Text)</font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000"> 
+                            ' Operation<br>
+                            If (MethodName = &quot;Morning&quot;) Then<br>
+                            Answer = &quot;Hello!&quot;<br>
+                            Else<br>
+                            Anwser = &quot;Bye Bye!&quot;<br>
+                            End If</font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000">' 
+                            Construction of response header<br>
+                            Response.ContentType = &quot;text/xml&quot;</font></p>
+                          <p><font face="Courier New, Courier, mono" size="2" color="#000000"> 
+                            ' Construction of response XML payload<br>
+                            Serializer.Init Response <br>
+                            Serializer.startEnvelope<br>
+                            Serializer.startBody <br>
+                            Serializer.startElement MethodName &amp; &quot;Response&quot;,<br>
+                            &quot;uri:Speech&quot;<br>
+                            Serializer.startElement &quot;Answer&quot;, &quot;uri:Speech&quot; 
+                            Serializer.writeString Answer<br>
+                            Serializer.endElement <br>
+                            Serializer.endElement<br>
+                            Serializer.endBody <br>
+                            Serializer.endEnvelope<br>
+                            </font></p>
+                        </td>
+                      </tr>
+                    </table>
+                    <p align="justify"><img src="http://www.perfectxml.com/articles/xml/images/Toolkit5.gif" width="366" height="356"></p>
+                    <p align="left"><i><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">Low-API 
+                      SOAP communication: server side </font></i></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      difference between the low API illustrated here and the 
+                      high API is that in the former case, incoming and outgoing 
+                      messages are directly processed by the COM object. For a 
+                      high API, the SOAP Server automatically takes care of these 
+                      operations.</font></p>
+                    <p align="justify"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The advantage of this programming method is that it makes 
+                      it possible to monitor the message generator very precisely, 
+                      and allows customized error management to be developed. 
+                      The major disadvantage is that such COM objects are solely 
+                      designed to be called via SOAP. So when using this method, 
+                      it would be wise to externalize all the business logic to 
+                      another COM object and to keep only the SOAP processes in 
+                      the object presented as a Web Service, as the following 
+                      diagram illustrates: </font></p>
+                    <p align="justify"><img src="http://www.perfectxml.com/articles/xml/images/Toolkit6.gif" width="392" height="205"></p>
+                    <p align="left"><i><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">Recommended 
+                      use with COM objects in low API</font></i></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="3"><b>Conclusion</b></font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Microsoft's 
+                      SOAP Toolkit 2.0 Beta 1 enables us to call or create SOAP 
+                      services using two API levels.</font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">The 
+                      high API enables the client to make simple calls using the 
+                      WSDL of the service called. Interoperability is not 100 
+                      percent, however, as these clients cannot as yet use services 
+                      developed with the Apache SOAP implementation, which requires 
+                      the type of the parameters sent.</font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      Those wishing to offer services can do so via an ASP and 
+                      a COM object. A WSML file makes the connection between the 
+                      WSDL and the service itself, which is described in a COM 
+                      object. Mapping is carried out in the ASP using methods 
+                      contained in the new libraries.</font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+                      The low API enables the client to monitor the message independently 
+                      (or not) from the service described by the WSDL. Server 
+                      side, the implementation makes it possible to offer services 
+                      and monitor messages. This low API means that developers 
+                      can process messages with the methods made available. The 
+                      advantage is therefore that flows can be monitored and errors 
+                      managed. </font></p>
+                    <p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Microsoft 
+                      is carving itself out a good position by offering an easily 
+                      accessed, detailed product for calling Web Services using 
+                      SOAP. The examples given by Microsoft on this new toolkit 
+                      include insertion of SOAP in Office applications such as 
+                      Excel, so Office users can now have the current Euro-Dollar 
+                      exchange rate in their Excel functions, for example. However, 
+                      few Web Services except those on Microsoft's <a class="data_link" rel="nofollow" href="http://www.gotdotnet.com" target="new">www.gotdotnet.com</a> <img src=http://www.perfectxml.com/images/external.gif border='0' width='23' height='13' alt='External link'>  
+                      site are currently deployed on the Web with this new technology. 
+                      Nevertheless, the chances are that the advent of .Net will 
+                      see a whole plethora of Web Services blossom on the Internet. 
+                      </font></p>
+									
+</blockquote>									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									</span>
+									
+									<table width="96%" border="1" bgcolor="#cc0000" cellspacing="0" cellpadding="1" align="center">
+										<tr>
+											<td valign="top" width="100%" align="left" bgcolor="#FFFFFF">
+											<span class="small_text">
+											<a class="data_link" rel="nofollow" href="http://www.techmetrix.com" target="parent"><img align="right" src="http://www.perfectxml.com/images/techmetrix.gif" width="184" height="47" alt="TechMetrix" border="0"></a>
+											<br>&nbsp;Reproduced with kind permission of <a class="data_link" rel="nofollow" href="http://www.techmetrix.com" target="parent">TechMetrix Research</a>&nbsp;<img src="http://www.perfectxml.com/images/external.gif" border="0" width="23" height="13" alt="External link">
+											<br>&nbsp;Article written by: CHRISTOPHE LAUER, Head of R&D (<a href="mailto:clauer@techmetrix.net" class="data_link">clauer@techmetrix.net</a>)
+											</span>
+											</td>
+										</tr>
+									</table>
+									<br><br>
+									<p align="right">
+									<a href="#top"><img src="http://www.perfectxml.com/images/articletop.gif" width="29" height="11" border="0"></a>&nbsp;&nbsp;
+									</p>
+
+									<p align="right">
+									<a class="data_link" href="/Articles.asp">Back to Articles Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</p>
+									<br><br>
+
+								</td>
+							</tr>
+
+
+
+							
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" border="0" cellpadding="2" cellspacing="0" bgcolor="#0066cc">
+<tr>
+<td width="5" class="newfooter">&nbsp;</td> <td align="left" class="newfooter" nowrap>
+<a href="/ContactUs.asp" class="newfooter">Contact Us</a>&nbsp;|
+<a href="mailto:comments@perfectxml.com" class="newfooter">E-mail Us</a>&nbsp;|
+<a href="/SiteGuide.asp" class="newfooter">Site Guide</a>&nbsp;|
+<a href="/AboutUs.asp" class="newfooter">About PerfectXML</a>&nbsp;|
+<a href="/AdInfo.asp" class="newfooter">Advertise</a>
+
+</td>
+<td align="right" class="newfooter">
+<span class="newfooter">&copy;2004 perfectxml.com. All rights reserved.</span>&nbsp;|
+<a href="/Privacy.asp" class="newfooter">Privacy</a>&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
